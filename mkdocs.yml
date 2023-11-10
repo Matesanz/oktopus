@@ -1,0 +1,48 @@
+site_name: '👋 oktopus'
+site_description: 'Graph-GPT your own datasmall and efficient llm models!'
+theme:
+  name: material
+  theme:
+  palette:
+    primary: indigo
+  features:
+    - content.code.annotate
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.prune
+    - navigation.indexes
+
+plugins:
+  - search
+  - autorefs
+  - section-index
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            docstring_options:
+              ignore_init_summary: yes
+            merge_init_into_class: yes
+            show_submodules: no
+            separate_signature: true
+  - gen-files:
+      scripts:
+      - docs/gen_code_docs_pages.py
+  - mkdocs-jupyter:
+      ignore: ["gen_code_docs_pages.py"]
+
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+watch:
+  - 'oktopus'
+  - docs

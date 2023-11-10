@@ -1,0 +1,58 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.231.6/containers/python-3
+{
+	"name": "👋 oktopus",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"context": "..",
+		"args": {
+			"PYTHON_VERSION": "3.10",
+			"POETRY_VERSION": "1.6.1"
+		}
+	},
+
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Set *default* container specific settings.json values on container create.
+			"settings": { 
+				"python.defaultInterpreterPath": "${containerEnv:PYENV_ROOT}/versions/${containerEnv:PYTHON_VERSION}/bin/python",
+				"python.poetryPath": "poetry",
+				"pylint.importStrategy": "fromEnvironment"
+			},
+			
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"ms-python.python",
+				"ms-python.pylint",
+				"ms-python.black",
+				"njpwerner.autodocstring",
+				"eamodio.gitlens",
+				"mhutchie.git-graph",
+				"zhuangtongfa.material-theme",
+				"pkief.material-icon-theme",
+				"ms-azuretools.vscode-docker",
+				"yzhang.markdown-all-in-one",
+				"DavidAnson.vscode-markdownlint",
+				"christian-kohler.path-intellisense",
+				"ms-vsliveshare.vsliveshare",
+				"Vtrois.gitmoji-vscode",
+				"GitHub.vscode-pull-request-github",
+				"seatonjiang.gitmoji-vscode",
+				"perkovec.emoji",
+				"ms-toolsai.jupyter",
+				"tamasfe.even-better-toml",
+				"GitHub.copilot"
+			]
+
+		}
+	},
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "bash ./.devcontainer/post-install.sh",
+
+	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode"
+}
