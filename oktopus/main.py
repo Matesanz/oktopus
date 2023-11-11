@@ -19,7 +19,7 @@ from contextlib import asynccontextmanager
 from qdrant_client import QdrantClient
 from sentence_transformers import SentenceTransformer
 
-from oktopus.data_models import DocNode, Document, Query, DocumentScore
+from oktopus.data_models import DocNode, Query, DocumentScore
 from oktopus.chunk2vector import populate_db_qdrant
 from oktopus.settings import config
 import json
@@ -77,7 +77,7 @@ async def get_documents() -> list[DocNode]:
 
 
 @app.post("/search", response_model=list[DocumentScore])
-async def search(query: str) -> list[DocumentScore]:
+async def search(query: Query) -> list[DocumentScore]:
     """Given a question (query) retrieves the scores for all the documents.
 
     Scores relates to the cosine similarity between the query and the document.
@@ -98,7 +98,7 @@ async def search(query: str) -> list[DocumentScore]:
         return unique_docs
 
     # Simulated score generation, returning doc_id and a score
-    documents_found = search_in_qdrant(query, 5)
+    documents_found = search_in_qdrant(query.query, 5)
 
     return _filter_unique_document(documents_found)
 
