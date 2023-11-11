@@ -2,10 +2,27 @@
 	import { Node } from 'svelvet';
 
 	export let title: string;
-	export let x: number;
-	export let y: number;
+	export let position: { x: number; y: number };
+	export let selected: boolean = false;
 </script>
 
-<Node position={{ x: x, y: y }}>
-	<h1>{title}</h1>
+<Node {position}>
+	<div class="marker {selected ? 'selected' : 'not-selected'}" />
+	<h1 class="subtitle has-text-centered">{title}</h1>
 </Node>
+
+<style>
+	.marker {
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+	}
+
+	.selected {
+		background-color: #dd57ff;
+	}
+
+	.not-selected {
+		background-color: #ffdd57;
+	}
+</style>
