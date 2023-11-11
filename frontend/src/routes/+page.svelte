@@ -136,7 +136,7 @@
 										class="button is-black is-rounded"
 										on:click={() => submit()}
 										disabled={query.length === 0}
-										>Search <i class="ml-2 fa-solid fa-arrow-right" /></button
+										>Ask <i class="ml-2 fa-solid fa-arrow-right" /></button
 									>
 								</div>
 							</div>
