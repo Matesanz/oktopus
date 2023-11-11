@@ -1,0 +1,6 @@
+## Causal Chain Decomposition Model
+The Causal Chain Decomposition Model is a key analytical tool used to study the relationship between economic growth and energy consumption. This model focuses on decomposing the decoupling index into various factors, thus facilitating an understanding of how and why decoupling or coupling between these two critical variables occurs.
+
+This methodology is based on a causal chain that establishes a direct connection between economic growth and energy consumption. Thanks to this chain, it is possible to break down the decoupling index into specific components such as energy intensity, economic structure, and energy efficiency. These factors are fundamental for understanding the dynamics underlying the relationship between the economy and energy consumption.
+
+One of the most relevant applications of the Causal Chain Decomposition Model is found in the industrial sector. Here, the model helps analyze how the economic growth of a sector is linked with its energy consumption and to identify those factors that influence the coupling or decoupling of these variables. This is especially useful in critical sectors such as the iron and steel industry in China, where this model has been applied to examine the evolution of energy efficiency and its impact on economic growth.
