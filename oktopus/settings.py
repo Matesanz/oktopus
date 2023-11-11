@@ -21,7 +21,8 @@ class Settings(BaseSettings):
     """
 
     PATH_DATA: Path = Path(__file__).parent.parent / "data"
-    QDRANT_LOCAL_PATH: Path = Path(__file__).parent.parent / "data"
+    PATH_DOCS: Path = Path(__file__).parent.parent / "data" / "documents"
+    QDRANT_LOCAL_PATH: Path = Path(__file__).parent.parent / "data" / "qdrant-db"
     PATH_META_DATA: Path = Path(__file__).parent.parent / "data"  / "documents-meta.json"
     QDRANT_COLL_NAME: str = "oktopus"
     MODEL_NAME: str = "sentence-transformers/multi-qa-MiniLM-L6-cos-v1"

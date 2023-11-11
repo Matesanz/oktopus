@@ -49,13 +49,14 @@ def _upload_one_document(
 
 
 def _populate_db_qdrant():
+    logging.warning(f"👷👷 Starting to populate qdrant database ....")
     model, client = _init_vectors_staff()
 
     path_metadata = config.PATH_DATA / "documents-meta.json"
     assert path_metadata.exists()
 
     meta_data = json.loads(path_metadata.read_text())
-    for md_doc in config.PATH_META_DATA.glob("*.md"):
+    for md_doc in config.PATH_DOCS.glob("*.md"):
         file_name = md_doc.name
         document_content = md_doc.read_text()
         _upload_one_document(model,
@@ -63,9 +64,10 @@ def _populate_db_qdrant():
                              document_content,
                              meta_data[file_name]['index'],
                              (meta_data[file_name]["x"], meta_data[file_name]["y"]),
-                             file_name.removesuffix('.md', '')
+                             file_name.removesuffix('.md')
         )
     logging.warning(f"There are {len(meta_data)} documents successfully loaded in qdrant 🥳🥳🥳🥳")
+    client.close()
 
 
 if __name__ == "__main__":
