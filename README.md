@@ -1,10 +1,30 @@
-# 👋 oktopus
+# 🐙 Oktopus
 
 ## 🪧 Description
 
-Graph-GPT your own data with small and efficient llm models!
+Ask your own data with small and efficient llm models nad visualize results with Graphs!
+
+## 🚀 Quick Start
+
+Use **Docker** (🐋💙) to launch the app: 
+
+```console
+git clone https://github.com/Matesanz/oktopus.git
+docker build -t octopus:latest .
+docker run --rm -p 80:80 octopus:latest
+```
+
+👉 Then go to [http://localhost:80](http://localhost:80)
 
 ## 🚀 Basic Usage
+
+Oktopus is a python package that can be easyly installed with pip:
+
+```bash
+pip install git+https://github.com/Matesanz/oktopus.git
+```
+
+Then is as simple as:
 
 ```python
 import oktopus

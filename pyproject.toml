@@ -1,9 +1,8 @@
 [tool.poetry]
 name = "oktopus"
-version = "0.0.0"
+version = "0.1.0"
 description = "Graph-GPT your own data with small and efficient llm models!"
 authors = ["Move38 <matesanz.cuadrado@gmail.com>"]
-readme = "README.md"
 packages = [{include = "oktopus"}]
 
 [tool.poetry.dependencies]

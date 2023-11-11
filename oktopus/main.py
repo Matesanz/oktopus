@@ -9,12 +9,15 @@ uvicorn oktopus.main:app --reload
 Then go to http://localhost:8000/docs to see the API documentation.
 """
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 
 from oktopus.data_models import DocNode, Document
 from oktopus import db
 
 
 app = FastAPI()
+
+app.mount("/", app=StaticFiles(directory="/static", html=True), name="static")
 
 
 # Endpoints
