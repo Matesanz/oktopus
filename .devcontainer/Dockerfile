@@ -1,15 +1,13 @@
-# VSCode Base Image
+FROM node:20 AS build
+
+COPY frontend/ /app
+WORKDIR /app
+
+RUN npm install
+RUN npm run build
+
 FROM mcr.microsoft.com/vscode/devcontainers/python:0-3.11
 ARG DEBIAN_FRONTEND=noninteractive
-
-# Install OpenCV and ffmpeg
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends \
-    ffmpeg \
-    libopencv-dev \
-    && apt-get autoremove -y \
-    && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
 
 # Python and poetry installation
 ARG USER=vscode
@@ -32,3 +30,5 @@ RUN echo "done 0" \
     && echo "done 3" \
     && curl -sSL https://install.python-poetry.org | python3 - --version ${POETRY_VERSION} \
     && poetry config virtualenvs.in-project false
+
+COPY --from=build /app/static /static
