@@ -98,7 +98,7 @@
 								/>
 							</div>
 							<div class="control">
-								<button class="button is-bold is-primary is-rounded" on:click={() => submit()}
+								<button class="button is-primary is-rounded" on:click={() => submit()}
 									>Search</button
 								>
 							</div>
@@ -111,8 +111,6 @@
 </section>
 <footer class="mt-8 footer has-text-light has-background-primary">
 	<div class="content has-text-centered">
-		<p>
-			<strong>Oktopus by Move 38 with ❤️ for JUNCTION</strong>.
-		</p>
+		<p>Oktopus by Move 38 with ❤️ for JUNCTION.</p>
 	</div>
 </footer>

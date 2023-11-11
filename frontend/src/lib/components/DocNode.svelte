@@ -41,16 +41,4 @@
 		height: 2em;
 		border-radius: 50%;
 	}
-
-	.marker:hover {
-		background-color: red;
-	}
-
-	.selected {
-		background-color: #64737d;
-	}
-
-	.not-selected {
-		background-color: #070807;
-	}
 </style>

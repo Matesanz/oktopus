@@ -12,3 +12,15 @@
 .svelvet-node {
     box-shadow: none !important;
 }
+
+.selected {
+    background-color: $primary;
+}
+
+.not-selected {
+    background-color: $text;
+}
+
+.marker:hover {
+    background-color: $info;
+}
