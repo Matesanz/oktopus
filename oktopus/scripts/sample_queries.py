@@ -5,7 +5,7 @@ from pydantic import BaseModel
 from qdrant_client import QdrantClient
 from sentence_transformers import SentenceTransformer
 
-from scripts.const import PATH_DATA, QDRANT_COLL_NAME, QDRANT_LOCAL_PATH, MODEL_NAME
+from oktopus import 
 
 
 class DocumentPosition(BaseModel):

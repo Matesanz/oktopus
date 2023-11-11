@@ -11,12 +11,20 @@ Then go to http://localhost:8000/docs to see the API documentation.
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
+from contextlib import asynccontextmanager
 
 from oktopus.data_models import DocNode, Document, Query
 from oktopus import db
+from oktopus.scripts.convert_docs2vectors import _populate_db_qdrant
 
 
-app = FastAPI()
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Load the ML model
+    _populate_db_qdrant()
+    yield
+
+app = FastAPI(lifespan=lifespan)
 
 # cors
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
@@ -64,4 +72,4 @@ async def get_document_by_id(doc_id: int):
 
 
 # frontend
-app.mount("/", app=StaticFiles(directory="/static", html=True), name="static")
+app.mount("/", app=StaticFiles(directory="/workspaces/octopus/frontend/build", html=True), name="static")
