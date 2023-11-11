@@ -2,6 +2,75 @@
 
 
 
+## v0.3.0 (2023-11-11)
+
+### Other
+
+* Merge pull request #13 from Matesanz/front
+
+Get environment variables for API ([`6a94175`](https://github.com/Matesanz/oktopus/commit/6a94175cbf9cd6cbadb3bcb69c0498a10774fe2a))
+
+* 🔧 app port is 8080 ([`08ec781`](https://github.com/Matesanz/oktopus/commit/08ec7818e5fca97967a9443515a07ad065e37e22))
+
+* Chunk field ([`9ce991c`](https://github.com/Matesanz/oktopus/commit/9ce991c26bbe69ef614f4be549150055e34b68f1))
+
+* Extended type for chunking ([`bb8801e`](https://github.com/Matesanz/oktopus/commit/bb8801e304b51a1554652fb6c395225c3ea81dc9))
+
+* default api port ([`85412b1`](https://github.com/Matesanz/oktopus/commit/85412b14652191b5b2e934b66d3d327f353f8fe4))
+
+* 💄 Theming ([`79ede79`](https://github.com/Matesanz/oktopus/commit/79ede79e1e7c68920a845adb44321675d9a35f60))
+
+* Theming WIP ([`aeaa1ce`](https://github.com/Matesanz/oktopus/commit/aeaa1ce342860d6ca17489e0752584a80269dbeb))
+
+* 💄 Modal ([`c5f865c`](https://github.com/Matesanz/oktopus/commit/c5f865c6f2d5f05e208b4edaaadd9ae19fc141e3))
+
+* Merge branch &#39;enviroment_vars&#39; into front ([`511d120`](https://github.com/Matesanz/oktopus/commit/511d1202296fc65ded0078905d82d05bc34c5cb1))
+
+* Merge branch &#39;main&#39; into front ([`4dac776`](https://github.com/Matesanz/oktopus/commit/4dac776f04c0c66c267e040ad829aa891cb3df9b))
+
+* 💄 Node style ([`1d7a094`](https://github.com/Matesanz/oktopus/commit/1d7a0944c14c647438220e81cec622e260dc2e9d))
+
+* Merge pull request #12 from Matesanz/front
+
+Front update ([`fda724d`](https://github.com/Matesanz/oktopus/commit/fda724df03175d537c11a15c49c2daaca85819e7))
+
+* Front update ([`fbd760d`](https://github.com/Matesanz/oktopus/commit/fbd760dea76b0102e67f567479841d51a1567b51))
+
+* Merge pull request #10 from Matesanz/front
+
+Api integration ([`ebcb67e`](https://github.com/Matesanz/oktopus/commit/ebcb67ef3ac6965f8ec726c50aa2f95f9375bf0a))
+
+* Merge pull request #11 from Matesanz/chore/add-semantic-search
+
+Chore/add-semantic-search ([`a37a2a0`](https://github.com/Matesanz/oktopus/commit/a37a2a0be7deacef9382f756bd3cb49179123b74))
+
+* 🐼 Commit without sleep, thanks junction ([`868ae58`](https://github.com/Matesanz/oktopus/commit/868ae584e9367aac6bcac4998fe3bee4f8cb6a81))
+
+* 📦 Add qdrant and sentence-trasnformers ([`011662c`](https://github.com/Matesanz/oktopus/commit/011662c0889b4a5c64541fbd64e07b812a53c521))
+
+* POST Body ([`99b4643`](https://github.com/Matesanz/oktopus/commit/99b4643d3185e81a44a7fa803d8bdb23dc8048d5))
+
+* Merge branch &#39;front&#39; into api_integration ([`ff35b73`](https://github.com/Matesanz/oktopus/commit/ff35b7350987fb7a80416d42aa179c2c5a5327bf))
+
+* Methods for api integration ([`4fa5ae0`](https://github.com/Matesanz/oktopus/commit/4fa5ae019d30e254d123b80425ac59a9c758b063))
+
+### ✨
+
+* ✨ theming improvements ([`dcb5d6b`](https://github.com/Matesanz/oktopus/commit/dcb5d6bcefacdd576bb0d29ac6667d07a4c0865d))
+
+* ✨ Clean theme ([`f806ded`](https://github.com/Matesanz/oktopus/commit/f806dedc368ea167712a0d4c9bf433a082ff66c7))
+
+* ✨ Get environment variables ([`523f85f`](https://github.com/Matesanz/oktopus/commit/523f85f26e5af83e6388c605cabd4d20b7a90a9c))
+
+### 🐛
+
+* 🐛 Incorrect type fix ([`c4a0bf2`](https://github.com/Matesanz/oktopus/commit/c4a0bf26d336b37e40f5ea503de5f9290758b201))
+
+### 🚑
+
+* 🚑 Wrong env ([`9a86e83`](https://github.com/Matesanz/oktopus/commit/9a86e83c802c262c933179382513c957dcaa2263))
+
+
 ## v0.2.1 (2023-11-11)
 
 ### Other
