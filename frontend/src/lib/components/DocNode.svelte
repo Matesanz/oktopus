@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { get_document_info } from '$lib/api';
+	import type { NodeInfo } from '$lib/types';
 	import { Node } from 'svelvet';
 
-	export let node: Node;
+	export let node: NodeInfo;
 	export let selected: boolean = false;
 
 	function scale(x: number, k = 200) {
