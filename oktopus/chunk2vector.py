@@ -2,6 +2,7 @@ import json
 import logging
 import re
 import uuid
+from time import monotonic
 
 from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, PointStruct, VectorParams
@@ -48,14 +49,16 @@ def _upload_one_document(
     )
 
 
-def _populate_db_qdrant():
+def populate_db_qdrant():
     logging.warning(f"👷👷 Starting to populate qdrant database ....")
+    tic = monotonic()
     model, client = _init_vectors_staff()
 
     path_metadata = config.PATH_DATA / "documents-meta.json"
     assert path_metadata.exists()
 
     meta_data = json.loads(path_metadata.read_text())
+    tic = monotonic()
     for md_doc in config.PATH_DOCS.glob("*.md"):
         file_name = md_doc.name
         document_content = md_doc.read_text()
@@ -67,8 +70,6 @@ def _populate_db_qdrant():
                              file_name.removesuffix('.md')
         )
     logging.warning(f"There are {len(meta_data)} documents successfully loaded in qdrant 🥳🥳🥳🥳")
+    logging.warning(f"Took {monotonic()- tic:.2f}")
     client.close()
 
-
-if __name__ == "__main__":
-    _populate_db_qdrant()

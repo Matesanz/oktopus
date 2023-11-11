@@ -20,7 +20,7 @@ from qdrant_client import QdrantClient
 from sentence_transformers import SentenceTransformer
 
 from oktopus.data_models import DocNode, Document, Query, DocumentScore
-from oktopus.scripts.convert_docs2vectors import _populate_db_qdrant
+from oktopus.chunk2vector import populate_db_qdrant
 from oktopus.settings import config
 import json
 
@@ -56,7 +56,7 @@ def search_in_qdrant(text: str, limit: int) -> list[DocumentScore]:
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Load the ML model
-    _populate_db_qdrant()
+    populate_db_qdrant()
     yield
 
 app = FastAPI(lifespan=lifespan)
@@ -118,4 +118,4 @@ async def get_document_by_id(doc_id: int) -> str:
 
 
 # frontend
-app.mount("/", app=StaticFiles(directory="/static", html=True), name="static")
+# app.mount("/", app=StaticFiles(directory="/static", html=True), name="static")
