@@ -2,6 +2,17 @@
 
 
 
+## v0.4.0 (2023-11-11)
+
+### Other
+
+* Merge pull request #15 from Matesanz/productivize-sentence-transformers
+
+Productivize sentence transformers ([`bcf43e8`](https://github.com/Matesanz/oktopus/commit/bcf43e85fa2e5b946364552b65ed5235139a1445))
+
+* 🐼 I&#39;m stupid ([`3c68bf4`](https://github.com/Matesanz/oktopus/commit/3c68bf403553b985b97992354d9ddf8b0a76aaf3))
+
+
 ## v0.3.0 (2023-11-11)
 
 ### Other
@@ -16,9 +27,15 @@ Get environment variables for API ([`6a94175`](https://github.com/Matesanz/oktop
 
 * Extended type for chunking ([`bb8801e`](https://github.com/Matesanz/oktopus/commit/bb8801e304b51a1554652fb6c395225c3ea81dc9))
 
+* 🐼 Remove mocks for real data ([`a49ab38`](https://github.com/Matesanz/oktopus/commit/a49ab38411482d80fb3f051f00ee75ee61b5c98b))
+
 * default api port ([`85412b1`](https://github.com/Matesanz/oktopus/commit/85412b14652191b5b2e934b66d3d327f353f8fe4))
 
 * 💄 Theming ([`79ede79`](https://github.com/Matesanz/oktopus/commit/79ede79e1e7c68920a845adb44321675d9a35f60))
+
+* ♻️ Refactor using real data
+
+* 🐼 Junction shit code ([`8a05249`](https://github.com/Matesanz/oktopus/commit/8a052498ab5a49c9094bb340747c50e3e72c04ac))
 
 * Theming WIP ([`aeaa1ce`](https://github.com/Matesanz/oktopus/commit/aeaa1ce342860d6ca17489e0752584a80269dbeb))
 
@@ -27,6 +44,8 @@ Get environment variables for API ([`6a94175`](https://github.com/Matesanz/oktop
 * Merge branch &#39;enviroment_vars&#39; into front ([`511d120`](https://github.com/Matesanz/oktopus/commit/511d1202296fc65ded0078905d82d05bc34c5cb1))
 
 * Merge branch &#39;main&#39; into front ([`4dac776`](https://github.com/Matesanz/oktopus/commit/4dac776f04c0c66c267e040ad829aa891cb3df9b))
+
+* ➕ pin torch to 2.0.*+cpu ([`a79bcf3`](https://github.com/Matesanz/oktopus/commit/a79bcf3bbb84f9ff55dc8e90be01371ee185ba41))
 
 * 💄 Node style ([`1d7a094`](https://github.com/Matesanz/oktopus/commit/1d7a0944c14c647438220e81cec622e260dc2e9d))
 
@@ -56,11 +75,15 @@ Chore/add-semantic-search ([`a37a2a0`](https://github.com/Matesanz/oktopus/commi
 
 ### ✨
 
+* ✨ Add more data ([`95e4c02`](https://github.com/Matesanz/oktopus/commit/95e4c02b5f8343c49ba123a8fbe4c9d0fb6ae97f))
+
 * ✨ theming improvements ([`dcb5d6b`](https://github.com/Matesanz/oktopus/commit/dcb5d6bcefacdd576bb0d29ac6667d07a4c0865d))
 
 * ✨ Clean theme ([`f806ded`](https://github.com/Matesanz/oktopus/commit/f806dedc368ea167712a0d4c9bf433a082ff66c7))
 
 * ✨ Get environment variables ([`523f85f`](https://github.com/Matesanz/oktopus/commit/523f85f26e5af83e6388c605cabd4d20b7a90a9c))
+
+* ✨ populate bd with documents ([`ae355a5`](https://github.com/Matesanz/oktopus/commit/ae355a5979d203cfb405a4f04d2eb51c29d425a2))
 
 ### 🐛
 
