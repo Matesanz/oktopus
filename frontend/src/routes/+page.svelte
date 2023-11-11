@@ -4,9 +4,10 @@
 	import { Node, Svelvet, Minimap, Controls } from 'svelvet';
 	import type { NodeInfo } from '$lib/types';
 	import { get_all_documents, post_query } from '$lib/api';
+	import { fly } from 'svelte/transition';
 
 	let query = '';
-	let move_down = false;
+	let show_graph = false;
 	let nodes: NodeInfo[] = [];
 	let matches: number[] = [];
 
@@ -16,48 +17,61 @@
 
 	async function submit() {
 		matches = await post_query(query);
-		move_down = true;
-		// window.alert(`API call with query: ${query} ${move_down}`);
+		show_graph = true;
+		// window.alert(`API call with query: ${query} ${show_graph}`);
 	}
 </script>
 
-<section class="hero is-fullheight-with-navbar">
+<section class="hero is-large">
 	<div class="hero-head">
 		<nav class="navbar is-primary has-background-primary" aria-label="main navigation">
-			<a class="navbar-item" href="https://bulma.io">
-				<img src="/icon.png" height="28" alt="A" />
-			</a>
 			<div class="navbar-brand">
-				<a class="navbar-item" href="/"> OKTOPUS </a>
+				<a class="navbar-item" href="/">
+					<img src="/icon.png" height="28" alt="logo" class="mr-4" />
+					<b> OKTOPUS </b>
+				</a>
 			</div>
 		</nav>
 	</div>
 	<div
-		class="hero-body {move_down ? 'is-align-items-end' : ''}"
+		class={show_graph ? 'is-align-items-end p-4' : 'hero-body'}
 		style="transition: 1s ease-in-out;"
 	>
-		<div class="container is-centered has-text-centered">
-			<h1 class="title">Oktopus</h1>
-			<div class="columns is-centered to-bottom">
-				<div class="column is-three-fifths is-justify-content-center">
-					<div class="field has-addons is-justify-content-center">
-						<div class="control is-expanded">
-							<input
-								class="input"
-								type="text"
-								placeholder="Look for insight"
-								bind:value={query}
-								on:keydown={(e) => {
-									if (e.key === 'Enter') {
-										submit();
-									}
-								}}
-							/>
-						</div>
-						<div class="control">
-							<button class="button is-bold is-primary is-rounded" on:click={() => submit()}
-								>Search</button
-							>
+		<div class="container is-fluid">
+			{#if show_graph}
+				<div class="mb-4" in:fly>
+					<Svelvet height={window.innerHeight * 0.75}>
+						{#each nodes as node}
+							<DocNode {node} selected={matches.includes(node.id)} />
+						{/each}
+					</Svelvet>
+				</div>
+			{/if}
+			<div class="is-centered has-text-centered">
+				{#if !show_graph}
+					<h1 class="title">Oktopus</h1>
+				{/if}
+				<div class="columns is-centered to-bottom">
+					<div class="column {show_graph ? '' : 'is-three-fifths'} is-justify-content-center">
+						<div class="field has-addons is-justify-content-center">
+							<div class="control is-expanded">
+								<input
+									class="input"
+									type="text"
+									placeholder="Look for insight"
+									bind:value={query}
+									on:keydown={(e) => {
+										if (e.key === 'Enter') {
+											submit();
+										}
+									}}
+								/>
+							</div>
+							<div class="control">
+								<button class="button is-bold is-primary is-rounded" on:click={() => submit()}
+									>Search</button
+								>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -65,9 +79,10 @@
 		</div>
 	</div>
 </section>
-
-<Svelvet height={512}>
-	{#each nodes as node}
-		<DocNode {node} selected={matches.includes(node.id)} />
-	{/each}
-</Svelvet>
+<footer class="mt-8 footer has-text-light has-background-primary">
+	<div class="content has-text-centered">
+		<p>
+			<strong>Oktopus by Move 38 with ❤️ for JUNCTION</strong>.
+		</p>
+	</div>
+</footer>
