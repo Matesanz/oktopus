@@ -1,25 +1,33 @@
 <script lang="ts">
+	import { get_document_info } from '$lib/api';
 	import { Node } from 'svelvet';
 
-	export let title: string;
-	export let x: number;
-	export let y: number;
+	export let node: Node;
 	export let selected: boolean = false;
 
 	function scale(x: number, k = 300) {
 		return x * k;
 	}
+
+	async function handle_click() {
+		let { content } = await get_document_info(node.id);
+		console.log(content);
+	}
 </script>
 
-<Node
-	position={{
-		x: scale(x),
-		y: scale(y)
-	}}
->
-	<div class="marker {selected ? 'selected' : 'not-selected'}" />
-	<h1 class="subtitle has-text-centered">{title}</h1>
-</Node>
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<div on:click={(_) => handle_click()}>
+	<Node
+		position={{
+			x: scale(node.x),
+			y: scale(node.y)
+		}}
+	>
+		<div class="marker {selected ? 'selected' : 'not-selected'}" />
+		<h1 class="subtitle has-text-centered">{node.title}</h1>
+	</Node>
+</div>
 
 <style>
 	.marker {

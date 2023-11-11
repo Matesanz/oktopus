@@ -1,5 +1,5 @@
 export interface NodeInfo {
-    id: string;
+    id: number;
     title: string;
     x: number;
     y: number;

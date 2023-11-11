@@ -3,23 +3,19 @@
 	import { onMount } from 'svelte';
 	import { Node, Svelvet, Minimap, Controls } from 'svelvet';
 	import type { NodeInfo } from '$lib/types';
+	import { get_all_documents, post_query } from '$lib/api';
 
-	let url = 'http://localhost:8015';
 	let query = '';
 	let move_down = false;
 	let nodes: NodeInfo[] = [];
+	let matches: number[] = [];
 
 	onMount(async () => {
-		let ans = await fetch(`${url}/documents`);
-		nodes = await ans.json();
-		console.log(nodes);
+		nodes = await get_all_documents();
 	});
 
-	function send_query() {
-		alert(`beep bop beep.... \`${query}\``);
-	}
-
-	function submit() {
+	async function submit() {
+		matches = await post_query(query);
 		move_down = true;
 		// window.alert(`API call with query: ${query} ${move_down}`);
 	}
@@ -72,6 +68,6 @@
 
 <Svelvet height={512}>
 	{#each nodes as node}
-		<DocNode title={node.title} x={node.x} y={node.y} selected={node.title == 'Sample 2'} />
+		<DocNode {node} selected={matches.includes(node.id)} />
 	{/each}
 </Svelvet>
