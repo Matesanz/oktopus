@@ -1,70 +1,68 @@
-<script>
-	import { onMount } from 'svelte';
+<script lang="ts">
+	import DocNode from '$lib/components/DocNode.svelte';
+	import { Node, Svelvet, Minimap, Controls } from 'svelvet';
 
-	const API_URL = '127.0.0.1';
-	let query = '';
+	let query: string = '';
+	let move_down = false;
 
-	let documents = [];
-	let best;
-	let chartCanvas;
-
-	onMount(async () => {
-		documents = await get_documents();
-		draw_docs(documents);
-	});
-
-	async function get_documents() {
-		alert(`beep bop beep.... GET!`);
-		return [1, 2, 3, 4, 5, 6];
+	function send_query() {
+		alert(`beep bop beep.... \`${query}\``);
 	}
 
-function draw_docs(data) {
-	let ctx = chartCanvas.getContext('2d');
-		let chart = new chartjs(ctx, {
-			type: 'line',
-			data: {
-					labels: chartLabels,
-					datasets: [{
-							label: 'Revenue',
-							backgroundColor: 'rgb(255, 99, 132)',
-							borderColor: 'rgb(255, 99, 132)',
-							data: chartValues
-					}]
-            		}
- }}
-
-	async function send_query() {
-		alert(`beep bop beep.... \`${query}\``);
-		return [2, 4, 6];
+	function submit() {
+		move_down = true;
+		// window.alert(`API call with query: ${query} ${move_down}`);
 	}
 </script>
 
-<section class="hero is-fullheight">
-	<div class="hero-body">
-		<div class="container has-text-centered">
+<section class="hero is-fullheight-with-navbar">
+	<div class="hero-head">
+		<nav class="navbar is-primary has-background-primary" aria-label="main navigation">
+			<div class="navbar-brand">
+				<a class="navbar-item" href="https://bulma.io"> OKTOPUS </a>
+			</div>
+		</nav>
+	</div>
+	<div
+		class="hero-body {move_down ? 'is-align-items-end' : ''}"
+		style="transition: 1s ease-in-out;"
+	>
+		<div class="container is-centered has-text-centered">
 			<h1 class="title">Oktopus</h1>
-			<div class="field has-addons">
-				<div class="control">
-					<input
-						class="input"
-						type="text"
-						placeholder="Look for insight"
-						bind:value={query}
-						on:keydown={(e) => {
-							if (e.key == 'Enter') {
-								best = send_query();
-							}
-						}}
-					/>
-				</div>
-				<div class="control">
-					<button class="button is-info is-bold" on:click={send_query}>Search</button>
+			<div class="columns is-centered to-bottom">
+				<div class="column is-three-fifths is-justify-content-center">
+					<div class="field has-addons is-justify-content-center">
+						<div class="control is-expanded">
+							<input
+								class="input"
+								type="text"
+								placeholder="Look for insight"
+								bind:value={query}
+								on:keydown={(e) => {
+									if (e.key === 'Enter') {
+										submit();
+									}
+								}}
+							/>
+						</div>
+						<div class="control">
+							<button class="button is-bold is-primary is-rounded" on:click={() => submit()}
+								>Search</button
+							>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
-chart:
-<canvas bind:this={chartCanvas} id="myChart" />
-end
+<Svelvet height={512}>
+	<DocNode
+		title="Sample "
+		position={{
+			x: 100,
+			y: 100
+		}}
+	/>
+</Svelvet>
