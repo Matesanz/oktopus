@@ -38,6 +38,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"svelte-frappe-charts": "^1.10.0"
+		"svelte-frappe-charts": "^1.10.0",
+		"svelvet": "^8.1.0"
 	}
 }

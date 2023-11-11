@@ -1,37 +1,21 @@
 <script>
 	import { onMount } from 'svelte';
+	import { Node, Svelvet, Minimap, Controls } from 'svelvet';
+	import DocNode from '$lib/components/DocNode.svelte';
 
 	const API_URL = '127.0.0.1';
 	let query = '';
 
 	let documents = [];
 	let best;
-	let chartCanvas;
-
 	onMount(async () => {
 		documents = await get_documents();
-		draw_docs(documents);
 	});
 
 	async function get_documents() {
 		alert(`beep bop beep.... GET!`);
 		return [1, 2, 3, 4, 5, 6];
 	}
-
-function draw_docs(data) {
-	let ctx = chartCanvas.getContext('2d');
-		let chart = new chartjs(ctx, {
-			type: 'line',
-			data: {
-					labels: chartLabels,
-					datasets: [{
-							label: 'Revenue',
-							backgroundColor: 'rgb(255, 99, 132)',
-							borderColor: 'rgb(255, 99, 132)',
-							data: chartValues
-					}]
-            		}
- }}
 
 	async function send_query() {
 		alert(`beep bop beep.... \`${query}\``);
@@ -66,5 +50,10 @@ function draw_docs(data) {
 </section>
 
 chart:
-<canvas bind:this={chartCanvas} id="myChart" />
+<Svelvet id="my-canvas" width={500} height={500} TD minimap locked>
+	<DocNode title="esta" x={0} y={0} />
+	<DocNode title="prohibido" x={64} y={64} />
+	<DocNode title="pushear" x={128} y={256} />
+	<DocNode title="main" x={256} y={256} />
+</Svelvet>
 end
