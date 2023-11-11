@@ -18,6 +18,9 @@
 <section class="hero is-fullheight-with-navbar">
 	<div class="hero-head">
 		<nav class="navbar is-primary has-background-primary" aria-label="main navigation">
+			<a class="navbar-item" href="https://bulma.io">
+				<img src="/icon.png" height="28" alt="A" />
+			</a>
 			<div class="navbar-brand">
 				<a class="navbar-item" href="/"> OKTOPUS </a>
 			</div>
