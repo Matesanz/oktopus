@@ -1,59 +1,56 @@
-<script>
-	import { onMount } from 'svelte';
-	import { Node, Svelvet, Minimap, Controls } from 'svelvet';
-	import DocNode from '$lib/components/DocNode.svelte';
+<script lang="ts">
+	import Chart from 'svelte-frappe-charts';
 
-	const API_URL = '127.0.0.1';
-	let query = '';
+	let query: string = '';
+	let translateY = 0;
 
-	let documents = [];
-	let best;
-	onMount(async () => {
-		documents = await get_documents();
-	});
+	let data = {
+		labels: ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'],
+		datasets: [
+			{
+				values: [10, 12, 3, 9, 8, 15, 9]
+			}
+		]
+	};
+	let chartRef;
 
-	async function get_documents() {
-		alert(`beep bop beep.... GET!`);
-		return [1, 2, 3, 4, 5, 6];
+	function send_query() {
+		alert(`beep bop beep.... \`${query}\``);
 	}
 
-	async function send_query() {
-		alert(`beep bop beep.... \`${query}\``);
-		return [2, 4, 6];
+	function handleEnter({ key }: any) {
+		if (key === 'Enter') {
+			submit(query);
+		}
+	}
+
+	function submit(query: string) {
+		window.alert(`API call with query: ${query}`);
 	}
 </script>
 
+<svelte:window on:keyup={handleEnter} />
+
 <section class="hero is-fullheight">
 	<div class="hero-body">
-		<div class="container has-text-centered">
-			<h1 class="title">Oktopus</h1>
-			<div class="field has-addons">
-				<div class="control">
-					<input
-						class="input"
-						type="text"
-						placeholder="Look for insight"
-						bind:value={query}
-						on:keydown={(e) => {
-							if (e.key == 'Enter') {
-								best = send_query();
-							}
-						}}
-					/>
-				</div>
-				<div class="control">
-					<button class="button is-info is-bold" on:click={send_query}>Search</button>
+		<div class="container is-centered has-text-centered">
+			<h1 class="title">Oktoopus</h1>
+			<div class="columns is-centered to-bottom">
+				<div class="column is-three-fifths is-justify-content-center">
+					<div class="field has-addons is-justify-content-center">
+						<div class="control is-expanded">
+							<input class="input" type="text" placeholder="Look for insight" bind:value={query} />
+						</div>
+						<div class="control">
+							<button class="button is-bold is-primary is-rounded" on:click={() => submit(query)}
+								>Search</button
+							>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
-chart:
-<Svelvet id="my-canvas" width={500} height={500} TD minimap locked>
-	<DocNode title="esta" x={0} y={0} />
-	<DocNode title="prohibido" x={64} y={64} />
-	<DocNode title="pushear" x={128} y={256} />
-	<DocNode title="main" x={256} y={256} />
-</Svelvet>
-end
+<Chart {data} bind:this={chartRef} />
