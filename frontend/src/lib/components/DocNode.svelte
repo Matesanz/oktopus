@@ -9,12 +9,17 @@
 
 	const dispatch = createEventDispatcher();
 
-	function scale(x: number, k = 200) {
+	const max_length = 16;
+	$: trimmed_title = `${node.title.slice(0, max_length)}${
+		node.title.length > max_length ? '...' : ''
+	}`;
+
+	function scale(x: number, k = 100) {
 		return x * k;
 	}
 
 	async function handle_click() {
-		let { content } = await get_document_info(node.id);
+		let content = await get_document_info(node.id);
 		dispatch('message', { title: node.title, content });
 	}
 </script>
@@ -30,9 +35,7 @@
 		title={node.title}
 		borderColor={selected ? 'red' : 'black'}
 	>
-		<div class="is-flex is-align-items-center">
-			<div class="marker {selected ? 'selected' : 'not-selected'}" />
-			<p class="has-text-centered ml-2">{node.title}</p>
-		</div>
+		<div class="marker {selected ? 'selected' : 'not-selected'}" />
+		<p class="ml-2">{trimmed_title}</p>
 	</Node>
 </div>

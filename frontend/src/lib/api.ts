@@ -16,12 +16,10 @@ export async function post_query(query: string) {
         },
         body: JSON.stringify({ query: query })
     });
-    let matches = await res.json();
-    return matches.map((x: any) => x[0]);
+    return await res.json()
 }
 
 export async function get_document_info(id: number) {
     let res = await fetch(`${api_url}/documents/${id}`);
-    return res.json();
-
+    return await res.json();
 }
