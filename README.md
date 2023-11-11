@@ -1,12 +1,12 @@
-# 👋 oktopus
+# 🐙 Oktopus
 
 ## 🪧 Description
 
-Graph-GPT your own data with small and efficient llm models!
+Ask your own data with small and efficient llm models nad visualize results with Graphs!
 
 ## 🚀 Quick Start
 
-Use Docker (🐋💙) to launch the app: 
+Use **Docker** (🐋💙) to launch the app: 
 
 ```console
 git clone https://github.com/Matesanz/oktopus.git
