@@ -118,4 +118,4 @@ async def get_document_by_id(doc_id: int) -> str:
 
 
 # frontend
-# app.mount("/", app=StaticFiles(directory="/static", html=True), name="static")
+app.mount("/", app=StaticFiles(directory="/static", html=True), name="static")
