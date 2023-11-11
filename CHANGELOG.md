@@ -2,6 +2,29 @@
 
 
 
+## v0.6.0 (2023-11-11)
+
+### Other
+
+* Merge pull request #17 from Matesanz/front
+
+Theme v2 and API update ([`83fd544`](https://github.com/Matesanz/oktopus/commit/83fd5447d33e09c7616a539cf38b08ac6d3f53d8))
+
+* Merge pull request #18 from Matesanz:add-data
+
+🔧 copy data into dockerfile ([`c77b675`](https://github.com/Matesanz/oktopus/commit/c77b675fb404d326d095f88dc5fc3579028e188f))
+
+* 🔧 copy data into dockerfile ([`5097c8c`](https://github.com/Matesanz/oktopus/commit/5097c8c93615c8ae5193df9f2045cefcfc57e4bb))
+
+* 💄 theme v2 ([`c856108`](https://github.com/Matesanz/oktopus/commit/c85610803400d656bbcd0ccad8eff0b27bb67cea))
+
+* 💄 ask ([`fccc7ee`](https://github.com/Matesanz/oktopus/commit/fccc7eeeac221824657f989a485613c3f607d620))
+
+### ✨
+
+* ✨ Updated API ([`1ce1299`](https://github.com/Matesanz/oktopus/commit/1ce1299d0a6d8b5b9c381b276c7b0b56a99610b0))
+
+
 ## v0.5.0 (2023-11-11)
 
 ### Other
