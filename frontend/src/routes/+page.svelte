@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import { Node, Svelvet, Minimap, Controls } from 'svelvet';
 	import type { NodeInfo } from '$lib/types';
-	import { get_all_documents, post_query } from '$lib/api';
+	import { api_url, get_all_documents, post_query } from '$lib/api';
 	import { fly } from 'svelte/transition';
 
 	let query = '';
@@ -81,8 +81,8 @@
 				</div>
 				<div id="navbar-stuff" class="navbar-menu">
 					<div class="navbar-end">
-						<a class="navbar-item" href="/docs" target="_blank"> API </a>
-						<a class="navbar-item" href="/redoc" target="_blank"> Documentation </a>
+						<a class="navbar-item" href="{api_url}/docs" target="_blank"> API </a>
+						<a class="navbar-item" href="{api_url}/redoc" target="_blank"> Documentation </a>
 					</div>
 				</div>
 			</nav>
