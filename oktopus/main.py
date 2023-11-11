@@ -12,11 +12,12 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 
-from oktopus.data_models import DocNode, Document
+from oktopus.data_models import DocNode, Document, Query
 from oktopus import db
 
 
 app = FastAPI()
+
 # cors
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
@@ -33,13 +34,13 @@ async def get_documents() -> list[DocNode]:
 
 
 @app.post("/generate", response_model=list[tuple[int, float]])
-async def generate_scores(query: str) -> list[tuple[int, float]]:
+async def generate_scores(query: Query) -> list[tuple[int, float]]:
     """Given a question (query) retrieves the scores for all the documents.
 
     Scores relates to the cosine similarity between the query and the document.
 
     Args:
-        query (str): Query
+        query (Query): Question to be answered by Oktopus based on your data.
 
     Returns:
         List[Tuple[int, float]]: List of (doc_id, score) tuples
@@ -61,10 +62,6 @@ async def get_document_by_id(doc_id: int):
     return db.documents_db.get(doc_id)
 
 
-app.mount(
-    "/",
-    app=StaticFiles(
-        directory="/home/rubenjr/projects/junction_fi/oktopus/frontend/build/", html=True
-    ),
-    name="static",
-)
+
+# frontend
+app.mount("/", app=StaticFiles(directory="/static", html=True), name="static")
