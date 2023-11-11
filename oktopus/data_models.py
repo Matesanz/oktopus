@@ -37,3 +37,8 @@ class Query(BaseModel):
     """
 
     query: str
+
+
+class DocumentScore(DocNode):
+    score: float
+    chunk: str
