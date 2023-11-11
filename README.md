@@ -6,12 +6,26 @@ Ask your own data with small and efficient llm models nad visualize results with
 
 ## 🚀 Quick Start
 
+### 🐋 Using Docker
+
 Use **Docker** (🐋💙) to launch the app: 
 
 ```console
 git clone https://github.com/Matesanz/oktopus.git
+cd oktopus
 docker build -t octopus:latest .
 docker run --rm -p 80:80 octopus:latest
+```
+
+### 🐍 Using Pip
+
+Use **Pip** (🐍💙) to launch the app: 
+
+```console
+git clone https://github.com/Matesanz/oktopus.git
+cd oktopus
+pip install .
+uvicorn oktopus.main:app --reload
 ```
 
 👉 Then go to [http://localhost:80](http://localhost:80)

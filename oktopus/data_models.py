@@ -27,3 +27,13 @@ class Document(DocNode):
     """
 
     content: str
+
+
+class Query(BaseModel):
+    """Question to be answered by Oktopus.
+
+    Attributes:
+        query (str): Query
+    """
+
+    query: str

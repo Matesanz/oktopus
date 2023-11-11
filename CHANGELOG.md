@@ -2,6 +2,25 @@
 
 
 
+## v0.2.0 (2023-11-11)
+
+### Other
+
+* Merge pull request #8 from Matesanz:query_in_body
+
+✨ allow query as a body request ([`6c55b58`](https://github.com/Matesanz/oktopus/commit/6c55b58b86c515cdd23b10b40b265427ec8ffbbf))
+
+* Merge pull request #7 from Matesanz/front
+
+Front ([`2775c27`](https://github.com/Matesanz/oktopus/commit/2775c2729ec523e520950e673d9aacc5cc1ea195))
+
+* 💄 Navbar ([`e7dcfe2`](https://github.com/Matesanz/oktopus/commit/e7dcfe2261d9c2a809b31331315201b1f5083cc8))
+
+### ✨
+
+* ✨ allow query as a body request ([`f166b98`](https://github.com/Matesanz/oktopus/commit/f166b980f31da8c840c40461b0931aa1a1ce3eeb))
+
+
 ## v0.1.0 (2023-11-11)
 
 ### Other
@@ -10,6 +29,12 @@
 
 Matesanz/issue4 ([`2df782c`](https://github.com/Matesanz/oktopus/commit/2df782cbd9dda3fe5af00f8277320c2599757bd1))
 
+* Merge branch &#39;node_design&#39; into front ([`d3c4526`](https://github.com/Matesanz/oktopus/commit/d3c4526e1f32748aae2316594082df932ae66454))
+
+* 🔧 Static adapter ([`e5a8e5b`](https://github.com/Matesanz/oktopus/commit/e5a8e5b43e34f5e9e8c9036ec068b1aa304a8a07))
+
+* 🚧 Node design ([`c7c327c`](https://github.com/Matesanz/oktopus/commit/c7c327ca5e815bef2df879a71d8eabd28dd87b49))
+
 * 🔧 add node to devcontainers ([`bb68bc0`](https://github.com/Matesanz/oktopus/commit/bb68bc06c76b53b1fa7aafba3706caeacfadf82c))
 
 * 🔧 add Dockerfile ([`3b54c2f`](https://github.com/Matesanz/oktopus/commit/3b54c2f9a660bd0fbc3bf5207a10df2488a65906))
@@ -17,6 +42,10 @@ Matesanz/issue4 ([`2df782c`](https://github.com/Matesanz/oktopus/commit/2df782cb
 * 🔧 remove readme from pyproject ([`03fbf9e`](https://github.com/Matesanz/oktopus/commit/03fbf9e9cb06a857f35029cbcd25e1e696a28e61))
 
 * Merge branch &#39;Matesanz/issue4&#39; of github.com:Matesanz/oktopus into Matesanz/issue4 ([`9521731`](https://github.com/Matesanz/oktopus/commit/95217314e399fe5b18fbf1f922ff0402e13129ae))
+
+* 💄 ui improvements ([`83bcd97`](https://github.com/Matesanz/oktopus/commit/83bcd97ac22f70b9370edd24ce6760bedcdfd508))
+
+* added svelvet ([`8667df1`](https://github.com/Matesanz/oktopus/commit/8667df10d55555b59cea9a992e9c3d8345e7f917))
 
 * 🚚 move github ci semantic release file ([`22ff8ec`](https://github.com/Matesanz/oktopus/commit/22ff8ec6bc533b672a26212e08398c9f8ebcac3b))
 
