@@ -1,5 +1,6 @@
 <script lang="ts">
 	import DocNode from '$lib/components/DocNode.svelte';
+	import SvelteMarkdown from 'svelte-markdown';
 	import { onMount } from 'svelte';
 	import { Svelvet } from 'svelvet';
 	import type { NodeInfo } from '$lib/types';
@@ -52,7 +53,7 @@
 				</article>
 			{/if}
 			<hr />
-			{modal_content}
+			<SvelteMarkdown source={modal_content} />
 		</section>
 		<footer class="modal-card-foot">
 			<button class="button is-black is-fullwidth" on:click={clear_modal}>Close</button>
