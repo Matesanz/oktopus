@@ -2,6 +2,25 @@
 
 
 
+## v0.7.0 (2023-11-11)
+
+### Other
+
+* Merge pull request #19 from Matesanz/front
+
+Frontend fixes ([`6edb43b`](https://github.com/Matesanz/oktopus/commit/6edb43b9c74edba1ad464062abd37494ac1a3ff3))
+
+* Merge branch &#39;front&#39; of https://github.com/Matesanz/oktopus into front ([`1faf0ae`](https://github.com/Matesanz/oktopus/commit/1faf0ae0bf186f1a4826784e9b17f1c31813507f))
+
+### ✨
+
+* ✨ Interface fixes ([`8756c80`](https://github.com/Matesanz/oktopus/commit/8756c80a5a5754e2dbe683076a1e854307877b5d))
+
+### 🔒
+
+* 🔒️ fix query model error ([`0f0d6c7`](https://github.com/Matesanz/oktopus/commit/0f0d6c75a982655081ddf243630930046c840905))
+
+
 ## v0.6.0 (2023-11-11)
 
 ### Other
