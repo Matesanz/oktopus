@@ -6,6 +6,14 @@ Graph-GPT your own data with small and efficient llm models!
 
 ## 🚀 Basic Usage
 
+Oktopus is a python package that can be easyly installed with pip:
+
+```bash
+pip install git+https://github.com/Matesanz/oktopus.git
+```
+
+Then is as simple as
+
 ```python
 import oktopus
 ```
