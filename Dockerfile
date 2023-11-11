@@ -23,6 +23,7 @@ COPY --from=build /app/build /static
 
 # Install oktopus binaries
 COPY oktopus/ /app/oktopus
+COPY data/ /app/data
 RUN pip install . --no-deps 
 
 # Launch app with uvicorn
