@@ -45,7 +45,7 @@
 
 <section class="hero is-large">
 	<div class="hero-head">
-		<nav class="navbar is-primary has-background-primary" aria-label="main navigation">
+		<nav class="navbar is-primary navbar_bg" aria-label="main navigation">
 			<div class="navbar-brand">
 				<a class="navbar-item" href="/">
 					<img src="/icon.png" height="28" alt="logo" class="mr-4" />
