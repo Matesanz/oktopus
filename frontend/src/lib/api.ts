@@ -8,7 +8,7 @@ export async function get_all_documents() {
 }
 
 export async function post_query(query: string) {
-    let res = await fetch(`${api_url}/generate`, {
+    let res = await fetch(`${api_url}/search`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
