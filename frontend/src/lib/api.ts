@@ -1,4 +1,6 @@
-let api_url = 'http://localhost:8015';
+const API_HOST = process.env.API_HOST || 'localhost';
+const API_PORT = process.env.API_PORT || 8000;
+let api_url = `http://${API_HOST}:${API_PORT}`;
 
 export async function get_all_documents() {
     let res = await fetch(`${api_url}/documents`);
