@@ -1,0 +1,6 @@
+## Tapio Decoupling Model
+The Tapio Decoupling Model is an index that measures the disconnection between energy consumption and economic growth. This model was proposed by Tapio in 2005 and is used to analyze the evolution of energy efficiency in key economic sectors.
+
+This model is an analytical tool focused on two crucial elements: economic growth and energy consumption. The central premise of the model is to evaluate the relationship between these two variables, with the aim of determining if economic growth is being achieved through lower energy consumption, thus reflecting greater energy efficiency.
+
+The core of the model lies in the Tapio decoupling index, which uses decoupling elasticity as its main measure. This elasticity is defined as the relationship between the percentage change in energy consumption and the percentage change in Gross Domestic Product (GDP). Through this measure, the model seeks to identify whether there is a disconnection between energy consumption and economic growth, which would imply greater efficiency in energy use as the economy grows.

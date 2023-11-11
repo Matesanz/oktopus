@@ -1,0 +1,5 @@
+## Implementation of Decomposer Roles in Eco-Industrial Parks (EIPs)
+Research has shown the effectiveness of incorporating decomposer roles, particularly in agriculture, within EIPs. This approach can improve efficiencies across the industrial network. The thesis studied the potential addition of roles that treat water while mimicking the decomposer function, leading to increased efficiency and environmental sustainability in the Chinese Steel Industry (CSI)​​.
+
+## Energy Efficiency and Conservation
+Since 1980, there have been major improvements in energy efficiency in the CSI. Strategies such as retiring energy-intensive devices, adopting continuous casting technologies, implementing control technologies, and utilizing by-product gases as fuel have contributed to this. These efforts have led to a significant reduction in energy consumption per tonne of steel​​.
