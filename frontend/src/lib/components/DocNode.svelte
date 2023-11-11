@@ -2,18 +2,21 @@
 	import { Node } from 'svelvet';
 
 	export let title: string;
-	export let position: { x: number; y: number };
+	export let x: number;
+	export let y: number;
 	export let selected: boolean = false;
 
-	function scale(position: any, k = 250) {
-		return {
-			x: position.x * k,
-			y: position.y * k
-		};
+	function scale(x: number, k = 300) {
+		return x * k;
 	}
 </script>
 
-<Node position={scale(position)}>
+<Node
+	position={{
+		x: scale(x),
+		y: scale(y)
+	}}
+>
 	<div class="marker {selected ? 'selected' : 'not-selected'}" />
 	<h1 class="subtitle has-text-centered">{title}</h1>
 </Node>

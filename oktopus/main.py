@@ -10,14 +10,15 @@ Then go to http://localhost:8000/docs to see the API documentation.
 """
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 
 from oktopus.data_models import DocNode, Document
 from oktopus import db
 
 
 app = FastAPI()
-
-app.mount("/", app=StaticFiles(directory="/static", html=True), name="static")
+# cors
+app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
 
 # Endpoints
@@ -58,3 +59,12 @@ async def get_document_by_id(doc_id: int):
         Document: Document
     """
     return db.documents_db.get(doc_id)
+
+
+app.mount(
+    "/",
+    app=StaticFiles(
+        directory="/home/rubenjr/projects/junction_fi/oktopus/frontend/build/", html=True
+    ),
+    name="static",
+)

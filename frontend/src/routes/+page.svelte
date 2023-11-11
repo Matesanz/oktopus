@@ -1,9 +1,19 @@
 <script lang="ts">
 	import DocNode from '$lib/components/DocNode.svelte';
+	import { onMount } from 'svelte';
 	import { Node, Svelvet, Minimap, Controls } from 'svelvet';
+	import type { NodeInfo } from '$lib/types';
 
-	let query: string = '';
+	let url = 'http://localhost:8015';
+	let query = '';
 	let move_down = false;
+	let nodes: NodeInfo[] = [];
+
+	onMount(async () => {
+		let ans = await fetch(`${url}/documents`);
+		nodes = await ans.json();
+		console.log(nodes);
+	});
 
 	function send_query() {
 		alert(`beep bop beep.... \`${query}\``);
@@ -13,25 +23,6 @@
 		move_down = true;
 		// window.alert(`API call with query: ${query} ${move_down}`);
 	}
-
-	const nodes: any[] = [
-		{
-			title: 'Sample 1',
-			position: { x: 1, y: 2 }
-		},
-		{
-			title: 'Sample 2',
-			position: { x: 2, y: 2 }
-		},
-		{
-			title: 'Sample 3',
-			position: { x: 1, y: 1 }
-		},
-		{
-			title: 'Sample 4',
-			position: { x: 0, y: 1 }
-		}
-	];
 </script>
 
 <section class="hero is-fullheight-with-navbar">
@@ -81,6 +72,6 @@
 
 <Svelvet height={512}>
 	{#each nodes as node}
-		<DocNode title={node.title} position={node.position} selected={node.title == 'Sample 2'} />
+		<DocNode title={node.title} x={node.x} y={node.y} selected={node.title == 'Sample 2'} />
 	{/each}
 </Svelvet>
