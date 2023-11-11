@@ -2,6 +2,17 @@
 
 
 
+## v0.2.1 (2023-11-11)
+
+### Other
+
+* Merge pull request #9 from Matesanz/front
+
+Front ([`c809072`](https://github.com/Matesanz/oktopus/commit/c8090726309ad3584286c4aa023b89647548688c))
+
+* Merge branch &#39;main&#39; into front ([`f8c9421`](https://github.com/Matesanz/oktopus/commit/f8c94219fb4aa2bb8fc4b633219cd48753585cff))
+
+
 ## v0.2.0 (2023-11-11)
 
 ### Other
@@ -9,6 +20,26 @@
 * Merge pull request #8 from Matesanz:query_in_body
 
 ✨ allow query as a body request ([`6c55b58`](https://github.com/Matesanz/oktopus/commit/6c55b58b86c515cdd23b10b40b265427ec8ffbbf))
+
+* Merge branch &#39;api_integration&#39; into front ([`f3bfb78`](https://github.com/Matesanz/oktopus/commit/f3bfb7887dd89cf34e25097d1b632ba83943a13f))
+
+* 🚧 get documents integration ([`6ea6097`](https://github.com/Matesanz/oktopus/commit/6ea6097ebd7d4a93679734cbb4abf3c5311e8d13))
+
+* 💄 Fixed Svelvet node box shadow ([`a2df898`](https://github.com/Matesanz/oktopus/commit/a2df89802f8935d3abcfe00476bc82e9708f84d2))
+
+* Merge branch &#39;front&#39; of https://github.com/Matesanz/oktopus into front ([`5bc0d94`](https://github.com/Matesanz/oktopus/commit/5bc0d94ad95ffa43580f68428b48f1b5758ac3cc))
+
+* 💄 Add icon to navbar ([`813941e`](https://github.com/Matesanz/oktopus/commit/813941ebfd3de7938dae2f4ad7431695fe3acc96))
+
+* Merge branch &#39;main&#39; into front ([`6ee0c97`](https://github.com/Matesanz/oktopus/commit/6ee0c97a5335e3409aefef4e9fbbfb194bc33a6d))
+
+* Merge branch &#39;front&#39; of https://github.com/Matesanz/oktopus into front ([`d70018b`](https://github.com/Matesanz/oktopus/commit/d70018b6d31716dc184cb55f5e2acb3c496708d4))
+
+* Better nodes, wip ([`ce1d2b3`](https://github.com/Matesanz/oktopus/commit/ce1d2b3e0e00167e1e7926211850663f72a4e8f6))
+
+* Merge branch &#39;front&#39; of https://github.com/Matesanz/oktopus into front ([`59ffa8b`](https://github.com/Matesanz/oktopus/commit/59ffa8be33eb5bc762674ce206f655895bc25a93))
+
+* 🍱 Add new icon to frontend static directory ([`4dac96e`](https://github.com/Matesanz/oktopus/commit/4dac96e24f74c2c155d912b70e899bb82b76b214))
 
 * Merge pull request #7 from Matesanz/front
 
@@ -19,6 +50,10 @@ Front ([`2775c27`](https://github.com/Matesanz/oktopus/commit/2775c2729ec523e520
 ### ✨
 
 * ✨ allow query as a body request ([`f166b98`](https://github.com/Matesanz/oktopus/commit/f166b980f31da8c840c40461b0931aa1a1ce3eeb))
+
+### 🐛
+
+* 🐛 fixed a bug in the nav ([`e05b97c`](https://github.com/Matesanz/oktopus/commit/e05b97c14048aba55e000d0888348a4bb4c13bb1))
 
 
 ## v0.1.0 (2023-11-11)
