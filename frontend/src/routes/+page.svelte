@@ -61,8 +61,8 @@
 <main class="main">
 	<section class="hero is-medium">
 		<div class="hero-head">
-			<nav class="navbar is-primary has-background-black" aria-label="main navigation">
-				<div class="navbar-brand has-background-primary">
+			<nav class="navbar has-shadow" aria-label="main navigation">
+				<div class="navbar-brand">
 					<a
 						class="navbar-item"
 						href="/"
@@ -71,10 +71,6 @@
 							query = '';
 						}}
 					>
-						<!--
-						
-						<img src="/icon.png" height="28" alt="logo" class="mr-4" />
-					-->
 						<i class="fa-brands fa-octopus-deploy" />
 						<b class="ml-2"> OKTOPUS </b>
 					</a>
@@ -136,7 +132,7 @@
 										class="button is-black is-rounded"
 										on:click={() => submit()}
 										disabled={query.length === 0}
-										>Search <i class="ml-2 fa-solid fa-arrow-right" /></button
+										>Ask <i class="ml-2 fa-solid fa-arrow-right" /></button
 									>
 								</div>
 							</div>
@@ -146,7 +142,7 @@
 			</div>
 		</div>
 	</section>
-	<footer class="mt-{show_graph ? '8' : '2'} footer has-text-light has-background-black">
+	<footer class="mt-{show_graph ? '8' : '2'} py-4 has-text-light has-background-info">
 		<div class="has-text-centered">
 			<p>
 				<i class="fa-brands fa-octopus-deploy" />
