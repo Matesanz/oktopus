@@ -2,6 +2,27 @@
 
 
 
+## v0.5.0 (2023-11-11)
+
+### Other
+
+* Merge pull request #16 from Matesanz/front
+
+Fixed broken links ([`c1343fb`](https://github.com/Matesanz/oktopus/commit/c1343fb4180e39454537eb33d882acbb85a51bd7))
+
+* Merge pull request #14 from Matesanz/build-docker-ci
+
+👷 add build docker pipeline ([`f31cdad`](https://github.com/Matesanz/oktopus/commit/f31cdada31d6539ff9c448e5669083ccb829a3d6))
+
+* Merge branch &#39;front&#39; of https://github.com/Matesanz/oktopus into front ([`2e92d2e`](https://github.com/Matesanz/oktopus/commit/2e92d2e2fe57df934edd17804abc3c766894171c))
+
+### 🚑
+
+* 🚑 API docs url ([`8a27beb`](https://github.com/Matesanz/oktopus/commit/8a27beb0be1d1d3615ebf3cd0817cfea488f610b))
+
+* 🚑 Broken navbar links ([`5405847`](https://github.com/Matesanz/oktopus/commit/54058472761ec319f95703b8db4a4395e3d17ff7))
+
+
 ## v0.4.0 (2023-11-11)
 
 ### Other
@@ -88,6 +109,10 @@ Chore/add-semantic-search ([`a37a2a0`](https://github.com/Matesanz/oktopus/commi
 ### 🐛
 
 * 🐛 Incorrect type fix ([`c4a0bf2`](https://github.com/Matesanz/oktopus/commit/c4a0bf26d336b37e40f5ea503de5f9290758b201))
+
+### 👷
+
+* 👷 add build docker pipeline ([`a9f1fea`](https://github.com/Matesanz/oktopus/commit/a9f1fea25404ab71e7112829a9facefad719a2c0))
 
 ### 🚑
 
