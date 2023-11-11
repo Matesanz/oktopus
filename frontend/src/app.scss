@@ -27,9 +27,17 @@ $family-primary: "Helvetica Neue";
     background-color: $dark;
 }
 
+.marker {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+}
+
 .marker:hover {
     // change mouse pointer
     cursor: pointer;
-    transition: 150ms ease-in-out;
     background-color: $info;
+    width: 3em;
+    height: 3em;
+    transition: 150ms ease-in-out;
 }

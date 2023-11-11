@@ -27,6 +27,8 @@
 			x: scale(node.x),
 			y: scale(node.y)
 		}}
+		title={node.title}
+		borderColor={selected ? 'red' : 'black'}
 	>
 		<div class="is-flex is-align-items-center">
 			<div class="marker {selected ? 'selected' : 'not-selected'}" />
@@ -34,11 +36,3 @@
 		</div>
 	</Node>
 </div>
-
-<style>
-	.marker {
-		width: 2em;
-		height: 2em;
-		border-radius: 50%;
-	}
-</style>
