@@ -5,15 +5,21 @@
 	import type { NodeInfo } from '$lib/types';
 	import { get_all_documents, post_query } from '$lib/api';
 	import { fly } from 'svelte/transition';
+	import { Modal } from 'svelma';
 
 	let query = '';
 	let show_graph = false;
 	let nodes: NodeInfo[] = [];
 	let matches: number[] = [];
+	let modalActive: boolean = false;
 
 	onMount(async () => {
 		nodes = await get_all_documents();
 	});
+
+	function handleMessage(event: any) {
+		modalActive = event.detail.modalActive;
+	}
 
 	async function submit() {
 		matches = await post_query(query);
@@ -23,6 +29,9 @@
 </script>
 
 <section class="hero is-large">
+	<Modal bind:active={modalActive}>
+		<p>Hello world! This is a modal.</p>
+	</Modal>
 	<div class="hero-head">
 		<nav class="navbar is-primary has-background-primary" aria-label="main navigation">
 			<div class="navbar-brand">
@@ -42,7 +51,7 @@
 				<div class="mb-4" in:fly>
 					<Svelvet height={window.innerHeight * 0.75}>
 						{#each nodes as node}
-							<DocNode {node} selected={matches.includes(node.id)} />
+							<DocNode {node} selected={matches.includes(node.id)} on:message={handleMessage} />
 						{/each}
 					</Svelvet>
 				</div>

@@ -1,6 +1,9 @@
 <script lang="ts">
 	import { get_document_info } from '$lib/api';
 	import { Node } from 'svelvet';
+	import { createEventDispatcher } from 'svelte';
+
+	const dispatch = createEventDispatcher();
 
 	export let node: Node;
 	export let selected: boolean = false;
@@ -11,7 +14,9 @@
 
 	async function handle_click() {
 		let { content } = await get_document_info(node.id);
-		console.log(content);
+		dispatch('message', {
+			modalActive: true
+		});
 	}
 </script>
 

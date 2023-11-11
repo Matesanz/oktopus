@@ -39,6 +39,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"rollup-plugin-postcss": "^4.0.2",
+		"svelma": "^0.4.5",
 		"svelte-frappe-charts": "^1.10.0",
 		"svelvet": "^8.1.0"
 	}
