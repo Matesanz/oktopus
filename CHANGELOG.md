@@ -2,6 +2,27 @@
 
 
 
+## v0.8.0 (2023-11-11)
+
+### Other
+
+* Merge pull request #21 from Matesanz/front
+
+✨ Responsiveness ([`32a612c`](https://github.com/Matesanz/oktopus/commit/32a612c78864608e4a7c5542d398e009a6e13d31))
+
+* Merge pull request #20 from Matesanz/front
+
+Font and Markdown ([`d4d38ea`](https://github.com/Matesanz/oktopus/commit/d4d38eafb1b87e2620251a505b238fa9d1352bdd))
+
+* Font and Markdown
+
+Montserrat from Darker Grotesque ([`f2bcef3`](https://github.com/Matesanz/oktopus/commit/f2bcef314180ee9600e6cde14005d10004e301d2))
+
+### ✨
+
+* ✨ Responsiveness ([`26c67f3`](https://github.com/Matesanz/oktopus/commit/26c67f389c078573486de6622c6b4dbc12765ed1))
+
+
 ## v0.7.0 (2023-11-11)
 
 ### Other
