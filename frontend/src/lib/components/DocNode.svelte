@@ -5,7 +5,7 @@
 	export let node: Node;
 	export let selected: boolean = false;
 
-	function scale(x: number, k = 300) {
+	function scale(x: number, k = 200) {
 		return x * k;
 	}
 
@@ -24,23 +24,29 @@
 			y: scale(node.y)
 		}}
 	>
-		<div class="marker {selected ? 'selected' : 'not-selected'}" />
-		<h1 class="subtitle has-text-centered">{node.title}</h1>
+		<div class="is-flex is-align-items-center">
+			<div class="marker {selected ? 'selected' : 'not-selected'}" />
+			<p class="has-text-centered ml-2">{node.title}</p>
+		</div>
 	</Node>
 </div>
 
 <style>
 	.marker {
-		width: 100px;
-		height: 100px;
+		width: 2em;
+		height: 2em;
 		border-radius: 50%;
 	}
 
+	.marker:hover {
+		background-color: red;
+	}
+
 	.selected {
-		background-color: #dd57ff;
+		background-color: #64737d;
 	}
 
 	.not-selected {
-		background-color: #ffdd57;
+		background-color: #070807;
 	}
 </style>
