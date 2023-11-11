@@ -3,25 +3,15 @@ repos:
   - repo: local
     hooks:
 
-      - id: black
-        name: Black
-        entry: black
+      - id: ruff-format
+        name: Ruff Format
+        entry: ruff format
         types: [python]
         language: system
 
-      - id: isort
-        name: Isort
-        entry: isort
-        types: [python]
-        language: system
-
-      - id: pylint
-        name: Pylint
-        entry: pylint
-        args:
-          [
-            "--rcfile=pyproject.toml",
-          ]
+      - id: ruff-check
+        name: Ruff Check
+        entry: ruff check
         types: [python]
         language: system
 
