@@ -11,7 +11,7 @@ from oktopus.settings import config
 
 
 def _chunk_text(document: str) -> list[str]:
-    return [chunk.strip() for chunk in re.split(r"\n|\.", document)]
+    return [chunk.strip() for chunk in document.split(".")]
 
 
 def _init_vectors_staff() -> tuple[SentenceTransformer, QdrantClient]:
@@ -21,7 +21,7 @@ def _init_vectors_staff() -> tuple[SentenceTransformer, QdrantClient]:
         vectors_config=VectorParams(size=config.MODEL_EMB_DIM, distance=Distance.COSINE),
     )
     model = SentenceTransformer(config.MODEL_NAME)
-    assert model.get_sentence_embedding_dimension() == config.MODEL_EMB_DIM, f"{model.get_sentence_embedding_dimension() = } VS {MODEL_EMB_DIM = }"
+    assert model.get_sentence_embedding_dimension() == config.MODEL_EMB_DIM, f"{model.get_sentence_embedding_dimension() = } VS {config.MODEL_EMB_DIM = }"
     return model, client
 
 
@@ -51,12 +51,21 @@ def _upload_one_document(
 def _populate_db_qdrant():
     model, client = _init_vectors_staff()
 
-    num_docs = len(list(config.PATH_DATA.glob('*.md')))
-    points = [(0.0, 0.0)]
-    for doc_idx, md_doc in enumerate(config.PATH_DATA.glob("*.md")):
+    path_metadata = config.PATH_DATA / "documents-meta.json"
+    assert path_metadata.exists()
+
+    meta_data = json.loads(path_metadata.read_text())
+    for md_doc in config.PATH_META_DATA.glob("*.md"):
+        file_name = md_doc.name
         document_content = md_doc.read_text()
-        _upload_one_document(model, client, document_content, doc_idx, points[doc_idx], md_doc.name.removesuffix('.md'))
-    logging.warning(f"There are {num_docs} documents successfully loaded in qdrant 🥳🥳🥳🥳")
+        _upload_one_document(model,
+                             client,
+                             document_content,
+                             meta_data[file_name]['index'],
+                             (meta_data[file_name]["x"], meta_data[file_name]["y"]),
+                             file_name.removesuffix('.md', '')
+        )
+    logging.warning(f"There are {len(meta_data)} documents successfully loaded in qdrant 🥳🥳🥳🥳")
 
 
 if __name__ == "__main__":

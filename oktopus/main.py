@@ -14,8 +14,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 
 from oktopus.data_models import DocNode, Document, Query
-from oktopus import db
 from oktopus.scripts.convert_docs2vectors import _populate_db_qdrant
+from oktopus.settings import config
+import json
+
+docs_metadata:dict = json.loads(config.PATH_META_DATA.read_text())
+id2metadata = {v['index']:DocNode(id=v['index'], x=v['x'], y=v['y'], title=k.removesuffix('.md')) for k, v in docs_metadata.items()}
 
 
 @asynccontextmanager
@@ -38,7 +42,7 @@ async def get_documents() -> list[DocNode]:
     Returns:
         List[DocNode]: List of documents
     """
-    return list(db.documents_db.values())
+    return list(id2metadata.values())
 
 
 @app.post("/generate", response_model=list[tuple[int, float]])
@@ -57,7 +61,7 @@ async def generate_scores(query: Query) -> list[tuple[int, float]]:
     return [(doc.id, doc.x * 0.5 + doc.y * 0.3) for doc in db.documents_db.values()]
 
 
-@app.get("/documents/{doc_id}", response_model=Document)
+@app.get("/documents/{doc_id}", response_model=DocNode)
 async def get_document_by_id(doc_id: int):
     """Retrieve a document by its id.
 
@@ -67,9 +71,8 @@ async def get_document_by_id(doc_id: int):
     Returns:
         Document: Document
     """
-    return db.documents_db.get(doc_id)
-
+    return id2metadata.get(doc_id)
 
 
 # frontend
-app.mount("/", app=StaticFiles(directory="/workspaces/octopus/frontend/build", html=True), name="static")
+app.mount("/", app=StaticFiles(directory="/static", html=True), name="static")
