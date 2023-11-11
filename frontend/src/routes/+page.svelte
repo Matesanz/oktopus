@@ -45,11 +45,15 @@
 
 <section class="hero is-large">
 	<div class="hero-head">
-		<nav class="navbar is-primary navbar_bg" aria-label="main navigation">
+		<nav class="navbar is-primary has-background-black" aria-label="main navigation">
 			<div class="navbar-brand">
 				<a class="navbar-item" href="/">
-					<img src="/icon.png" height="28" alt="logo" class="mr-4" />
-					<b> OKTOPUS </b>
+					<!--
+
+						<img src="/icon.png" height="28" alt="logo" class="mr-4" />
+					-->
+					<i class="fa-brands fa-octopus-deploy" />
+					<b class="ml-2"> OKTOPUS </b>
 				</a>
 			</div>
 		</nav>
@@ -79,14 +83,15 @@
 			{/if}
 			<div class="is-centered has-text-centered">
 				{#if !show_graph}
-					<h1 class="title">Oktopus</h1>
+					<h1 class="title">OKTOPUS</h1>
+					<h2 class="subtitle">Discover insight in a sea of uncertainty</h2>
 				{/if}
 				<div class="columns is-centered to-bottom">
 					<div class="column {show_graph ? '' : 'is-three-fifths'} is-justify-content-center">
 						<div class="field has-addons is-justify-content-center">
 							<div class="control is-expanded">
 								<input
-									class="input"
+									class="input is-black"
 									type="text"
 									placeholder="Look for insight"
 									bind:value={query}
@@ -98,8 +103,8 @@
 								/>
 							</div>
 							<div class="control">
-								<button class="button is-primary is-rounded" on:click={() => submit()}
-									>Search</button
+								<button class="button is-black is-rounded" on:click={() => submit()}
+									>Search <i class="ml-2 fa-solid fa-arrow-right" /></button
 								>
 							</div>
 						</div>
@@ -109,8 +114,11 @@
 		</div>
 	</div>
 </section>
-<footer class="mt-8 footer has-text-light has-background-primary">
+<footer class="mt-8 footer has-text-light has-background-black">
 	<div class="content has-text-centered">
-		<p>Oktopus by Move 38 with ❤️ for JUNCTION.</p>
+		<p>
+			<i class="fa-brands fa-octopus-deploy" />
+			OKTOPUS by Move 38 with ❤️ for JUNCTION.
+		</p>
 	</div>
 </footer>

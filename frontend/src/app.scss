@@ -15,9 +15,9 @@ $family-primary: "Helvetica Neue";
     box-shadow: none !important;
 }
 
-.navbar_bg {
-    background: linear-gradient(69deg, $accent 0%, $primary 69%) !important;
-}
+// .navbar_bg {
+// background: linear-gradient(90deg, $primary 31%, $black 100%) !important;
+// }
 
 .selected {
     background-color: $primary;
@@ -31,5 +31,5 @@ $family-primary: "Helvetica Neue";
     // change mouse pointer
     cursor: pointer;
     transition: 150ms ease-in-out;
-    background-color: $accent;
+    background-color: $info;
 }
