@@ -9,15 +9,18 @@
 @import 'bulma/sass/helpers/_all';
 @import 'bulma/sass/layout/_all';
 
-$family-primary: "Helvetica Neue";
+
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque');
+
+$family-primary: "Darker Grotesque";
 
 .svelvet-node {
     box-shadow: none !important;
 }
 
-// .navbar_bg {
-// background: linear-gradient(90deg, $primary 31%, $black 100%) !important;
-// }
+.navbar_bg {
+    background: linear-gradient(69deg, $primary 0%, $info 100%) !important;
+}
 
 .selected {
     background-color: $primary;
