@@ -6,12 +6,13 @@ export async function get_all_documents() {
 }
 
 export async function post_query(query: string) {
-    let res = await fetch(`${api_url}/generate?query=${query}`, {
+    let res = await fetch(`${api_url}/generate`, {
         method: 'POST',
         headers: {
+            'Content-Type': 'application/json',
             Accept: 'application/json'
         },
-        body: ''
+        body: JSON.stringify({ query: query })
     });
     let matches = await res.json();
     return matches.map((x: any) => x[0]);
