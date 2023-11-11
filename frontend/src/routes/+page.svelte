@@ -19,7 +19,7 @@
 	<div class="hero-head">
 		<nav class="navbar is-primary has-background-primary" aria-label="main navigation">
 			<div class="navbar-brand">
-				<a class="navbar-item" href="https://bulma.io"> OKTOPUS </a>
+				<a class="navbar-item" href="/"> OKTOPUS </a>
 			</div>
 		</nav>
 	</div>
