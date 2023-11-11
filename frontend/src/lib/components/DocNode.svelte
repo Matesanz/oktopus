@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { createEventDispatcher } from 'svelte';
 	import { get_document_info } from '$lib/api';
 	import type { NodeInfo } from '$lib/types';
 	import { Node } from 'svelvet';
@@ -6,13 +7,15 @@
 	export let node: NodeInfo;
 	export let selected: boolean = false;
 
+	const dispatch = createEventDispatcher();
+
 	function scale(x: number, k = 200) {
 		return x * k;
 	}
 
 	async function handle_click() {
 		let { content } = await get_document_info(node.id);
-		console.log(content);
+		dispatch('message', { title: node.title, content });
 	}
 </script>
 

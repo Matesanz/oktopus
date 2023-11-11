@@ -10,6 +10,9 @@
 	let show_graph = false;
 	let nodes: NodeInfo[] = [];
 	let matches: number[] = [];
+	let modal_open: boolean = false;
+	let modal_title: string = '';
+	let modal_content: string = '';
 
 	onMount(async () => {
 		nodes = await get_all_documents();
@@ -21,6 +24,24 @@
 		// window.alert(`API call with query: ${query} ${show_graph}`);
 	}
 </script>
+
+<div class="modal {modal_open ? 'is-active' : ''}">
+	<div class="modal-background" />
+	<div class="modal-card">
+		<header class="modal-card-head">
+			<p class="modal-card-title">{modal_title}</p>
+			<button class="delete" aria-label="close" on:click={(_) => (modal_open = false)} />
+		</header>
+		<section class="modal-card-body">
+			{modal_content}
+		</section>
+		<footer class="modal-card-foot">
+			<button class="button is-primary is-fullwidth" on:click={(_) => (modal_open = false)}
+				>Close</button
+			>
+		</footer>
+	</div>
+</div>
 
 <section class="hero is-large">
 	<div class="hero-head">
@@ -42,7 +63,16 @@
 				<div class="mb-4" in:fly>
 					<Svelvet height={window.innerHeight * 0.75}>
 						{#each nodes as node}
-							<DocNode {node} selected={matches.includes(node.id)} />
+							<DocNode
+								{node}
+								selected={matches.includes(node.id)}
+								on:message={(event) => {
+									let { title, content } = event.detail;
+									modal_content = content;
+									modal_title = title;
+									modal_open = true;
+								}}
+							/>
 						{/each}
 					</Svelvet>
 				</div>
