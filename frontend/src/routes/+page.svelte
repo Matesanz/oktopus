@@ -33,7 +33,20 @@
 			<button class="delete" aria-label="close" on:click={(_) => (modal_open = false)} />
 		</header>
 		<section class="modal-card-body">
-			lmao
+			<article class="message is-info">
+				<div class="message-header">
+					<p>Insight</p>
+				</div>
+				<div class="message-body">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong
+						>Pellentesque risus mi</strong
+					>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
+					Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac
+					<em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor,
+					tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem
+					eget, facilisis sodales sem.
+				</div>
+			</article>
 			<hr />
 			{modal_content}
 		</section>
@@ -50,7 +63,14 @@
 		<div class="hero-head">
 			<nav class="navbar is-primary has-background-black" aria-label="main navigation">
 				<div class="navbar-brand has-background-primary">
-					<a class="navbar-item" href="/" on:click={(_) => (show_graph = false)}>
+					<a
+						class="navbar-item"
+						href="/"
+						on:click={(_) => {
+							show_graph = false;
+							query = '';
+						}}
+					>
 						<!--
 						
 						<img src="/icon.png" height="28" alt="logo" class="mr-4" />
@@ -105,14 +125,17 @@
 										placeholder="Look for insight"
 										bind:value={query}
 										on:keydown={(e) => {
-											if (e.key === 'Enter') {
+											if (e.key === 'Enter' && query.length > 0) {
 												submit();
 											}
 										}}
 									/>
 								</div>
 								<div class="control">
-									<button class="button is-black is-rounded" on:click={() => submit()}
+									<button
+										class="button is-black is-rounded"
+										on:click={() => submit()}
+										disabled={query.length === 0}
 										>Search <i class="ml-2 fa-solid fa-arrow-right" /></button
 									>
 								</div>
