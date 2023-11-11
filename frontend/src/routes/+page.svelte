@@ -1,9 +1,19 @@
 <script lang="ts">
 	import DocNode from '$lib/components/DocNode.svelte';
+	import { onMount } from 'svelte';
 	import { Node, Svelvet, Minimap, Controls } from 'svelvet';
+	import type { NodeInfo } from '$lib/types';
 
-	let query: string = '';
+	let url = 'http://localhost:8015';
+	let query = '';
 	let move_down = false;
+	let nodes: NodeInfo[] = [];
+
+	onMount(async () => {
+		let ans = await fetch(`${url}/documents`);
+		nodes = await ans.json();
+		console.log(nodes);
+	});
 
 	function send_query() {
 		alert(`beep bop beep.... \`${query}\``);
@@ -18,8 +28,11 @@
 <section class="hero is-fullheight-with-navbar">
 	<div class="hero-head">
 		<nav class="navbar is-primary has-background-primary" aria-label="main navigation">
+			<a class="navbar-item" href="https://bulma.io">
+				<img src="/icon.png" height="28" alt="A" />
+			</a>
 			<div class="navbar-brand">
-				<a class="navbar-item" href="https://bulma.io"> OKTOPUS </a>
+				<a class="navbar-item" href="/"> OKTOPUS </a>
 			</div>
 		</nav>
 	</div>
@@ -58,11 +71,7 @@
 </section>
 
 <Svelvet height={512}>
-	<DocNode
-		title="Sample "
-		position={{
-			x: 100,
-			y: 100
-		}}
-	/>
+	{#each nodes as node}
+		<DocNode title={node.title} x={node.x} y={node.y} selected={node.title == 'Sample 2'} />
+	{/each}
 </Svelvet>
