@@ -9,6 +9,35 @@
 @import 'bulma/sass/helpers/_all';
 @import 'bulma/sass/layout/_all';
 
+$family-primary: "Helvetica Neue";
+
 .svelvet-node {
     box-shadow: none !important;
+}
+
+// .navbar_bg {
+// background: linear-gradient(90deg, $primary 31%, $black 100%) !important;
+// }
+
+.selected {
+    background-color: $primary;
+}
+
+.not-selected {
+    background-color: $dark;
+}
+
+.marker {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+}
+
+.marker:hover {
+    // change mouse pointer
+    cursor: pointer;
+    background-color: $info;
+    width: 3em;
+    height: 3em;
+    transition: 150ms ease-in-out;
 }

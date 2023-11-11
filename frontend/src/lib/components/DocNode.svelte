@@ -1,17 +1,21 @@
 <script lang="ts">
+	import { createEventDispatcher } from 'svelte';
 	import { get_document_info } from '$lib/api';
+	import type { NodeInfo } from '$lib/types';
 	import { Node } from 'svelvet';
 
-	export let node: Node;
+	export let node: NodeInfo;
 	export let selected: boolean = false;
 
-	function scale(x: number, k = 300) {
+	const dispatch = createEventDispatcher();
+
+	function scale(x: number, k = 200) {
 		return x * k;
 	}
 
 	async function handle_click() {
 		let { content } = await get_document_info(node.id);
-		console.log(content);
+		dispatch('message', { title: node.title, content });
 	}
 </script>
 
@@ -23,24 +27,12 @@
 			x: scale(node.x),
 			y: scale(node.y)
 		}}
+		title={node.title}
+		borderColor={selected ? 'red' : 'black'}
 	>
-		<div class="marker {selected ? 'selected' : 'not-selected'}" />
-		<h1 class="subtitle has-text-centered">{node.title}</h1>
+		<div class="is-flex is-align-items-center">
+			<div class="marker {selected ? 'selected' : 'not-selected'}" />
+			<p class="has-text-centered ml-2">{node.title}</p>
+		</div>
 	</Node>
 </div>
-
-<style>
-	.marker {
-		width: 100px;
-		height: 100px;
-		border-radius: 50%;
-	}
-
-	.selected {
-		background-color: #dd57ff;
-	}
-
-	.not-selected {
-		background-color: #ffdd57;
-	}
-</style>

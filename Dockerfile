@@ -26,5 +26,5 @@ COPY oktopus/ /app/oktopus
 RUN pip install . --no-deps 
 
 # Launch app with uvicorn
-EXPOSE 80
-CMD [ "uvicorn", "oktopus.main:app", "--host", "0.0.0.0", "--port", "80" ]
+EXPOSE 8080
+CMD [ "uvicorn", "oktopus.main:app", "--host", "0.0.0.0", "--port", "8080" ]

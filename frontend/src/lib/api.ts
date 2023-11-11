@@ -1,4 +1,6 @@
-let api_url = 'http://localhost:8015';
+const API_HOST = import.meta.env.API_HOST || 'localhost';
+const API_PORT = import.meta.env.API_PORT || 8080;
+let api_url = `http://${API_HOST}:${API_PORT}`;
 
 export async function get_all_documents() {
     let res = await fetch(`${api_url}/documents`);

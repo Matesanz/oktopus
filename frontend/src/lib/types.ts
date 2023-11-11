@@ -3,4 +3,5 @@ export interface NodeInfo {
     title: string;
     x: number;
     y: number;
+    chunk: string
 }
