@@ -1,7 +1,7 @@
 <script lang="ts">
 	import DocNode from '$lib/components/DocNode.svelte';
 	import { onMount } from 'svelte';
-	import { Node, Svelvet, Minimap, Controls } from 'svelvet';
+	import { Svelvet } from 'svelvet';
 	import type { NodeInfo } from '$lib/types';
 	import { api_url, get_all_documents, post_query } from '$lib/api';
 	import { fly } from 'svelte/transition';
@@ -9,10 +9,18 @@
 	let query = '';
 	let show_graph = false;
 	let nodes: NodeInfo[] = [];
-	let matches: number[] = [];
+	let matches: NodeInfo[] = [];
 	let modal_open: boolean = false;
 	let modal_title: string = '';
 	let modal_content: string = '';
+	let modal_chunk: string = '';
+
+	function clear_modal() {
+		modal_title = '';
+		modal_content = '';
+		modal_chunk = '';
+		modal_open = false;
+	}
 
 	onMount(async () => {
 		nodes = await get_all_documents();
@@ -30,36 +38,30 @@
 	<div class="modal-card">
 		<header class="modal-card-head">
 			<p class="modal-card-title">{modal_title}</p>
-			<button class="delete" aria-label="close" on:click={(_) => (modal_open = false)} />
+			<button class="delete" aria-label="close" on:click={clear_modal} />
 		</header>
 		<section class="modal-card-body">
-			<article class="message is-info">
-				<div class="message-header">
-					<p>Insight</p>
-				</div>
-				<div class="message-body">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong
-						>Pellentesque risus mi</strong
-					>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla.
-					Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac
-					<em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor,
-					tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem
-					eget, facilisis sodales sem.
-				</div>
-			</article>
+			{#if modal_chunk.length > 0}
+				<article class="message is-info">
+					<div class="message-header">
+						<p>Insight</p>
+					</div>
+					<div class="message-body">
+						{modal_chunk}
+					</div>
+				</article>
+			{/if}
 			<hr />
 			{modal_content}
 		</section>
 		<footer class="modal-card-foot">
-			<button class="button is-black is-fullwidth" on:click={(_) => (modal_open = false)}
-				>Close</button
-			>
+			<button class="button is-black is-fullwidth" on:click={clear_modal}>Close</button>
 		</footer>
 	</div>
 </div>
 
 <main class="main">
-	<section class="hero is-medium">
+	<section class="hero is-medium {show_graph ? 'mb-8' : ''}">
 		<div class="hero-head">
 			<nav class="navbar has-shadow" aria-label="main navigation">
 				<div class="navbar-brand">
@@ -94,11 +96,18 @@
 							{#each nodes as node}
 								<DocNode
 									{node}
-									selected={matches.includes(node.id)}
+									selected={matches.some((n) => n.id == node.id)}
 									on:message={(event) => {
 										let { title, content } = event.detail;
 										modal_content = content;
 										modal_title = title;
+										// get the chunk from the corresponding match
+										const matching_node = matches.find((n) => n.id == node.id);
+										if (matching_node) {
+											modal_chunk = matching_node.chunk;
+										} else {
+											modal_chunk = '';
+										}
 										modal_open = true;
 									}}
 								/>
