@@ -81,8 +81,8 @@
 				</div>
 				<div id="navbar-stuff" class="navbar-menu">
 					<div class="navbar-end">
-						<a class="navbar-item" href="/docs" target="_blank"> API </a>
-						<a class="navbar-item" href="/redoc" target="_blank"> Documentation </a>
+						{@html `<a class="navbar-item" href="/docs" target="_blank"> API </a>`}
+						{@html `<a class="navbar-item" href="/redoc" target="_blank"> Documentation </a>`}
 					</div>
 				</div>
 			</nav>
