@@ -6,11 +6,13 @@ authors = ["Move38 <matesanz.cuadrado@gmail.com>"]
 packages = [{include = "oktopus"}]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.10,<3.13"
 fastapi = "~0.104"
 pydantic = "~2.4"
 pydantic-settings = "~2.0"
 uvicorn = {version = "~0.23", extras = ["standard"]}
+sentence-transformers = "^2.2.2"
+qdrant-client = "^1.6.4"
 
 [tool.poetry.group.dev.dependencies]
 black = "^22.8.0"
