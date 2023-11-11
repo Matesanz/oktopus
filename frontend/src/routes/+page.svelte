@@ -13,6 +13,25 @@
 		move_down = true;
 		// window.alert(`API call with query: ${query} ${move_down}`);
 	}
+
+	const nodes: any[] = [
+		{
+			title: 'Sample 1',
+			position: { x: 1, y: 2 }
+		},
+		{
+			title: 'Sample 2',
+			position: { x: 2, y: 2 }
+		},
+		{
+			title: 'Sample 3',
+			position: { x: 1, y: 1 }
+		},
+		{
+			title: 'Sample 4',
+			position: { x: 0, y: 1 }
+		}
+	];
 </script>
 
 <section class="hero is-fullheight-with-navbar">
@@ -58,11 +77,7 @@
 </section>
 
 <Svelvet height={512}>
-	<DocNode
-		title="Sample "
-		position={{
-			x: 100,
-			y: 100
-		}}
-	/>
+	{#each nodes as node}
+		<DocNode title={node.title} position={node.position} selected={node.title == 'Sample 2'} />
+	{/each}
 </Svelvet>
