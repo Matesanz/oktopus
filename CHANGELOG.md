@@ -2,6 +2,19 @@
 
 
 
+## v0.11.1 (2023-11-12)
+
+### Other
+
+* Merge pull request #28 from Matesanz:update-readme
+
+📝 Update Readme with images ([`298f415`](https://github.com/Matesanz/oktopus/commit/298f41575f994c946e8a049e8bbc64aa41484769))
+
+### 📝
+
+* 📝 Update Readme with images ([`2071a9a`](https://github.com/Matesanz/oktopus/commit/2071a9a994327a8bd4e07b70d6f8e0f1ab72d73f))
+
+
 ## v0.11.0 (2023-11-12)
 
 ### Other
