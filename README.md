@@ -1,21 +1,28 @@
 # 🐙 Oktopus
 
+![image](https://user-images.githubusercontent.com/44867923/282287164-c5e8f61d-9b9d-418a-821e-72bde01e89aa.jpg)
+
 ## 🪧 Description
 
-Ask your own data with small and efficient llm models nad visualize results with Graphs!
+Store information and retrieve it quickly thanks to NLP techniques (open and **light Transformers models**, not OpenAI api key required 🤗) while **visualizing your data source in a graph**.
+
+Our platform empowers you to **find insight hidden at first sight** by leveraging all your raw data as well as other text-based information sources. We use **extremely lightweight models to reduce the environmental footprint** of all your analysis operations. No need for huge resource-hungry LLMs that take forever on super expensive hardware to run, process documents in just a few milliseconds!
+
+- 🐍 We used Python Backend (**FastAPI**). Powered by **Sentence Transformers** and **Qdrant** Vector Database.
+- 💅 **Svelte** Front-End (**Bulma** components and **Svelvet** for points graph)
+- 🐳 CI/CD **Github** workflows that deploys on **Dockerhub** and **Digital Ocean** when branches are merged with main on GitHub.
 
 ## 🚀 Quick Start
 
 ### 🐋 Using Docker
 
-Use **Docker** (🐋💙) to launch the app: 
+Use **Docker** (🐋💙) to launch the app:
 
 ```console
-git clone https://github.com/Matesanz/oktopus.git
-cd oktopus
-docker build -t octopus:latest .
-docker run --rm -p 80:80 octopus:latest
+docker run --rm -p 8080:8080 matesanz/oktopus:latest
 ```
+
+👉 Then go to [http://localhost:80](http://localhost:80)
 
 ### 🐍 Using Pip
 
