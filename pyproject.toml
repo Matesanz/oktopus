@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "oktopus"
-version = "0.8.0"
+version = "0.9.0"
 description = "Graph-GPT your own data with small and efficient llm models!"
 authors = ["Move38 <matesanz.cuadrado@gmail.com>"]
 packages = [{include = "oktopus"}]

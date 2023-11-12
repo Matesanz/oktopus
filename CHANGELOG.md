@@ -2,6 +2,31 @@
 
 
 
+## v0.9.0 (2023-11-12)
+
+### Other
+
+* Merge pull request #24 from Matesanz/front
+
+🚑 Environment strikes again ([`8ab0c1c`](https://github.com/Matesanz/oktopus/commit/8ab0c1ca1bfcaf28e2e78cba309558f0e41264f7))
+
+* Merge pull request #23 from Matesanz/chore/add-more-data
+
+Chore/add more data ([`d8bdc5f`](https://github.com/Matesanz/oktopus/commit/d8bdc5f144806d453b92b935551a92dc945b27c7))
+
+* 🐼 Add more documents data ([`40bf19c`](https://github.com/Matesanz/oktopus/commit/40bf19c761aa44b7e28c3e0a88fe6965352bede4))
+
+* Merge pull request #22 from Matesanz/front
+
+💄 Favicon and title ([`cd4916c`](https://github.com/Matesanz/oktopus/commit/cd4916c37f439b1735435ac7d08079b399ac7e27))
+
+* 💄 Favicon and title ([`0f8f990`](https://github.com/Matesanz/oktopus/commit/0f8f99093dc1a3af70a7bb3be0a143293cae6b38))
+
+### 🚑
+
+* 🚑 Environment strikes again ([`b34d547`](https://github.com/Matesanz/oktopus/commit/b34d547b3945b777505fb8f64af1d0202312f90f))
+
+
 ## v0.8.0 (2023-11-11)
 
 ### Other
@@ -9,6 +34,8 @@
 * Merge pull request #21 from Matesanz/front
 
 ✨ Responsiveness ([`32a612c`](https://github.com/Matesanz/oktopus/commit/32a612c78864608e4a7c5542d398e009a6e13d31))
+
+* 🐼 Add more documents data ([`a3e703b`](https://github.com/Matesanz/oktopus/commit/a3e703b950fa745eb7101fd6ff4fc1dc52b315e3))
 
 * Merge pull request #20 from Matesanz/front
 
