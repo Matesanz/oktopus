@@ -2,6 +2,21 @@
 
 
 
+## v0.10.0 (2023-11-12)
+
+### Other
+
+* Merge pull request #25 from Matesanz/front
+
+Hotfix for the hotfix for the env var ([`63d3e3e`](https://github.com/Matesanz/oktopus/commit/63d3e3e16bdf4543e92724e22ae9a4474d9dcdda))
+
+* 💄 Fixed responsiveness ([`fed1ceb`](https://github.com/Matesanz/oktopus/commit/fed1cebbc962342fd7ea00b4eb04968a0e4eb6fe))
+
+### 🚑
+
+* 🚑 Hotfix for the hotfix for the env var ([`34d4dc8`](https://github.com/Matesanz/oktopus/commit/34d4dc884ede4a1b96f2f4e7e54dcf85e3ba32ea))
+
+
 ## v0.9.0 (2023-11-12)
 
 ### Other
