@@ -1,6 +1,9 @@
-const API_HOST = import.meta.env.API_HOST || 'localhost';
-const API_PORT = import.meta.env.API_PORT || 8080;
-export const api_url = `http://${API_HOST}:${API_PORT}`;
+
+const API_HOST = import.meta.env.VITE_PUBLIC_API_HOST || 'localhost'
+const API_PORT = import.meta.env.VITE_PUBLIC_API_PORT || 8080
+const IS_DEV = API_HOST == 'localhost'
+
+export const api_url = `${IS_DEV ? 'http' : 'https'}://${API_HOST}${IS_DEV ? `${API_PORT}` : ''}`;
 
 export async function get_all_documents() {
     let res = await fetch(`${api_url}/documents`);
