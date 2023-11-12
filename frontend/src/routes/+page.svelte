@@ -30,7 +30,36 @@
 	async function submit() {
 		matches = await post_query(query);
 		show_graph = true;
+		const interval = setInterval(() => {
+			spread_nodes();
+		}, 1000 / 30);
+		return () => {
+			clearInterval(interval);
+		};
+
 		// window.alert(`API call with query: ${query} ${show_graph}`);
+	}
+
+	function spread_nodes() {
+		for (let i = 0; i < nodes.length; i++) {
+			for (let j = 0; j < nodes.length; j++) {
+				let n1 = nodes[i];
+				let n2 = nodes[j];
+				if (n1.id != n2.id) {
+					// check if too close
+					const d = Math.sqrt((n1.x - n2.x) ** 2 + (n1.y - n2.y) ** 2);
+					if (d < 1) {
+						// move away
+						const dx = n1.x - n2.x;
+						const dy = n1.y - n2.y;
+						const l = Math.sqrt(dx ** 2 + dy ** 2);
+						n2.x -= (dx / l) * 0.1;
+						n2.y -= (dy / l) * 0.1;
+						nodes[j] = n2;
+					}
+				}
+			}
+		}
 	}
 </script>
 
@@ -48,7 +77,7 @@
 						<p>Insight</p>
 					</div>
 					<div class="message-body">
-						{modal_chunk}
+						<SvelteMarkdown source={modal_chunk} />
 					</div>
 				</article>
 			{/if}

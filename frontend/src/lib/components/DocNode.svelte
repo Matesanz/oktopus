@@ -14,7 +14,7 @@
 		node.title.length > max_length ? '...' : ''
 	}`;
 
-	function scale(x: number, k = 100) {
+	function scale(x: number, k = 200) {
 		return x * k;
 	}
 
@@ -28,12 +28,11 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div on:click={(_) => handle_click()}>
 	<Node
+		locked={true}
 		position={{
 			x: scale(node.x),
 			y: scale(node.y)
 		}}
-		title={node.title}
-		borderColor={selected ? 'red' : 'black'}
 	>
 		<div class="marker {selected ? 'selected' : 'not-selected'}" />
 		<p class="ml-2">{trimmed_title}</p>
