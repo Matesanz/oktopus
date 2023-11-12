@@ -121,7 +121,7 @@
 						<h1 class="title">OKTOPUS</h1>
 						<h2 class="subtitle">Discover insight in a sea of uncertainty</h2>
 					{/if}
-					<div class="columns is-desktop is-centered to-bottom">
+					<div class="columns is-centered to-bottom">
 						<div class="column {show_graph ? '' : 'is-three-fifths'} is-justify-content-center">
 							<div class="field has-addons is-justify-content-center">
 								<div class="control is-expanded">
