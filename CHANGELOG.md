@@ -2,6 +2,19 @@
 
 
 
+## v0.11.0 (2023-11-12)
+
+### Other
+
+* Merge pull request #26 from Matesanz/front
+
+✨ Anti-collision animation ([`90662af`](https://github.com/Matesanz/oktopus/commit/90662afd8f0eccb39aec8e1a2a299b71d84943ac))
+
+### ✨
+
+* ✨ Anti-collision animation ([`772dbb5`](https://github.com/Matesanz/oktopus/commit/772dbb5014ded28051f0a9ea08e0cbb22539015f))
+
+
 ## v0.10.0 (2023-11-12)
 
 ### Other
